@@ -1,0 +1,25 @@
+/*
+  Localizable.strings
+  porra f1
+
+  Created by Alejandro Miranda on 13/3/23.
+  
+*/
+
+/* WelcomeView */
+"welcome" = "Welcome";
+"welcome-message" = "Welcome to Porra F1! Log in or sign up to get started.";
+"login" = "Log in";
+"sign-up" = "Sign up";
+
+/* LoginView */
+"login" = "Log in";
+"email" = "Email";
+"password" = "Password";
+
+/* RegisterView */
+"create-account" = "Create account";
+"email" = "Email";
+"verify-email" = "Verify email";
+"password" = "Password";
+
