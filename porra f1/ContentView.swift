@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var authModel: AuthViewModel
+
     var body: some View {
-        WelcomeView()
-            .tint(Color("AccentColor"))
+        Group {
+            if authModel.userIsSignedIn() {
+                BetView()
+            } else {
+                WelcomeView()
+            }
+        }
+        .tint(Color("AccentColor"))
+        .onAppear {
+            authModel.listenToAuthState()
+        }
     }
 }
 

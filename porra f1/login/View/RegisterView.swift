@@ -7,43 +7,65 @@
 
 import SwiftUI
 
-struct RegisterView: View {
-    private enum FocusedField {
-        case email, emailVerification, password
-    }
+struct RegisterView: View {    
+    @EnvironmentObject private var authViewModel: AuthViewModel
     
     @State private var email = ""
+    @State private var emailVerify = ""
     @State private var password = ""
-
+    @State private var errorMessage = ""
+    
     @State private var showPassword = false
-    @FocusState private var focusedField: FocusedField?
+    
+    private func verifyEmail() -> Bool {
+        return email == emailVerify
+    }
+    
+    private func createAccount() async {
+        if verifyEmail() {
+            await authViewModel.signUp(emailAddress: email, password: password)
+            if !authViewModel.errorMessage.isEmpty {
+                self.errorMessage = authViewModel.errorMessage
+            }
+        } else {
+            self.errorMessage = "email-not-verify-error"
+        }
+    }
     
     var body: some View {
         VStack(spacing: 25) {
-            VStack(alignment: .leading, spacing: 15) {
-                Text("email")
-                TextField("email", text: self.$email)
-                    .modifier(LoginInputModifier())
-                    .textInputAutocapitalization(.never)
-                    .keyboardType(.emailAddress)
-                    .focused($focusedField, equals: .email)
+            VStack {
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("email")
+                    TextField("email", text: self.$email)
+                        .modifier(LoginInputModifier())
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+                    
+                    Text("verify-email")
+                    TextField("verify-email", text: self.$emailVerify)
+                        .modifier(LoginInputModifier())
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+                }
+                VStack(alignment: .leading) {
+                    Text("password")
+                    SecureInputView("password", text: self.$password)
+                        .modifier(LoginInputModifier())
+                        .cornerRadius(10)
+                }
                 
-                Text("verify-email")
-                TextField("verify-email", text: self.$email)
-                    .modifier(LoginInputModifier())
-                    .textInputAutocapitalization(.never)
-                    .keyboardType(.emailAddress)
-                    .focused($focusedField, equals: .emailVerification)
+                if !errorMessage.isEmpty {
+                    Text(NSLocalizedString(errorMessage, comment: ""))
+                        .foregroundColor(.red)
+                        .bold()
+                }
             }
-            VStack(alignment: .leading)  {
-                Text("password")
-                SecureInputView("password", text: self.$password)
-                    .modifier(LoginInputModifier())
-                    .cornerRadius(10)
-                    .focused($focusedField, equals: .password)
-            }
+            
             Button {
-                // TODO: Add create account action
+                Task {
+                    await createAccount()
+                }
             } label: {
                 Text("create-account")
                     .frame(maxWidth: .infinity)
@@ -52,15 +74,6 @@ struct RegisterView: View {
             .controlSize(.large)
             .buttonBorderShape(.roundedRectangle(radius: 10))
             .padding(.vertical, 35)
-            .onChange(of: focusedField) { newValue in
-                if newValue == .email {
-                    
-                } else if newValue == .password {
-                    
-                } else {
-                    
-                }
-            }
             Spacer()
         }
         .padding()

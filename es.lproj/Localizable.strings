@@ -22,3 +22,4 @@
 "email" = "Correo electrónico";
 "verify-email" = "Verificar correo electrónico";
 "password" = "Contraseña";
+"email-not-verify-error" = "Los correos electrónicos no coinciden";

@@ -9,17 +9,8 @@ import SwiftUI
 import FirebaseAuth
 
 final class AuthViewModel: ObservableObject {
-    var user: User? {
-        didSet {
-            objectWillChange.send()
-        }
-    }
-    
-    var errorMessage: String = "" {
-        didSet {
-            obje
-        }
-    }
+    @Published var user: User?
+    @Published var errorMessage: String = ""
     
     func listenToAuthState() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
@@ -30,18 +21,14 @@ final class AuthViewModel: ObservableObject {
         }
     }
     
-    func signUp(
-        emailAddress: String,
-        password: String
-    ) {
-        return Auth.auth().createUser(withEmail: emailAddress, password: password)
-    }
-    
-    func signOut() {
+    @MainActor
+    func signUp(emailAddress: String, password: String) async {
         do {
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+            let authResult = try await Auth.auth().createUser(withEmail: emailAddress, password: password)
+            self.user = authResult.user
+        } catch {
+            print("There was an error: \(error.localizedDescription)")
+            self.errorMessage = error.localizedDescription
         }
     }
     
@@ -51,7 +38,7 @@ final class AuthViewModel: ObservableObject {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             self.user = authResult.user
         } catch {
-            print("There was an error: \(error)")
+            print("There was an error: \(error.localizedDescription)")
             self.errorMessage = error.localizedDescription
         }
     }

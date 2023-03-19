@@ -22,4 +22,5 @@
 "email" = "Email";
 "verify-email" = "Verify email";
 "password" = "Password";
+"email-not-verify-error" = "Emails are different";
 

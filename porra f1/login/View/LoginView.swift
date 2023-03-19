@@ -8,27 +8,47 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject private var authViewModel: AuthViewModel
+    
     @State private var email = ""
     @State private var password = ""
+    @State private var errorMessage = ""
 
     @State private var showPassword = false
     
+    private func login() async {
+        await authViewModel.signIn(email: email, password: password)
+        if !authViewModel.errorMessage.isEmpty {
+            self.errorMessage = authViewModel.errorMessage
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 25) {
-            VStack(alignment: .leading) {
-                Text("email")
-                TextField("email", text: self.$email)
-                    .modifier(LoginInputModifier())
-                    .textInputAutocapitalization(.never)
-                    .keyboardType(.emailAddress)
-            }
-            VStack(alignment: .leading)  {
-                Text("password")
-                SecureInputView("password", text: self.$password)
-                    .modifier(LoginInputModifier())
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("email")
+                    TextField("email", text: self.$email)
+                        .modifier(LoginInputModifier())
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+                }
+                VStack(alignment: .leading)  {
+                    Text("password")
+                    SecureInputView("password", text: self.$password)
+                        .modifier(LoginInputModifier())
+                }
+                if !errorMessage.isEmpty {
+                    Text(NSLocalizedString(errorMessage, comment: ""))
+                        .foregroundColor(.red)
+                        .bold()
+                }
+
             }
             Button {
-                // TODO: Add login action
+                Task {
+                    await login()
+                }
             } label: {
                 Text("login")
                     .frame(maxWidth: .infinity)
