@@ -75,7 +75,7 @@
 			children = (
 				A9CD301D29C753FD007D6C77 /* read-bet */,
 				A91489AF29BFC3DF005E6B6F /* shared */,
-				A91489A829BFBD5C005E6B6F /* login */,
+				A91489A829BFBD5C005E6B6F /* auth */,
 				A914899A29BFBC64005E6B6F /* porra_f1App.swift */,
 				A914899C29BFBC64005E6B6F /* ContentView.swift */,
 				A914899E29BFBC65005E6B6F /* Assets.xcassets */,
@@ -93,14 +93,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A91489A829BFBD5C005E6B6F /* login */ = {
+		A91489A829BFBD5C005E6B6F /* auth */ = {
 			isa = PBXGroup;
 			children = (
-				A9CD301929C750DB007D6C77 /* service */,
+				A9CD301929C750DB007D6C77 /* ViewModel */,
 				A9CD301829C750D0007D6C77 /* View */,
 				A91489A929BFBD6F005E6B6F /* WelcomeView.swift */,
 			);
-			path = login;
+			path = auth;
 			sourceTree = "<group>";
 		};
 		A91489AF29BFC3DF005E6B6F /* shared */ = {
@@ -121,12 +121,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A9CD301929C750DB007D6C77 /* service */ = {
+		A9CD301929C750DB007D6C77 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */,
 			);
-			path = service;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A9CD301D29C753FD007D6C77 /* read-bet */ = {
