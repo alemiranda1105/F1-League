@@ -74,12 +74,12 @@
 			isa = PBXGroup;
 			children = (
 				A9CD301D29C753FD007D6C77 /* read-bet */,
-				A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */,
 				A91489AF29BFC3DF005E6B6F /* shared */,
 				A91489A829BFBD5C005E6B6F /* login */,
 				A914899A29BFBC64005E6B6F /* porra_f1App.swift */,
 				A914899C29BFBC64005E6B6F /* ContentView.swift */,
 				A914899E29BFBC65005E6B6F /* Assets.xcassets */,
+				A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */,
 				A91489A029BFBC65005E6B6F /* Preview Content */,
 			);
 			path = "porra f1";
