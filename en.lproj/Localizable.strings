@@ -24,3 +24,8 @@
 "password" = "Password";
 "email-not-verify-error" = "Emails are different";
 
+/* HomeView */
+"drivers-view" = "Drivers";
+"groups-view" = "Groups";
+"races-view" = "Races";
+"loading-text" = "Loading...";

@@ -23,3 +23,9 @@
 "verify-email" = "Verificar correo electrónico";
 "password" = "Contraseña";
 "email-not-verify-error" = "Los correos electrónicos no coinciden";
+
+/* HomeView */
+"drivers-view" = "Pilotos";
+"groups-view" = "Grupos";
+"races-view" = "Carreras";
+"loading-text" = "Cargando...";

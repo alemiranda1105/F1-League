@@ -17,10 +17,16 @@
 		A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91489B029BFC3F0005E6B6F /* SecureInputView.swift */; };
 		A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91489B229BFC514005E6B6F /* LoginInputModifier.swift */; };
 		A91489B829BFCB36005E6B6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A91489BA29BFCB36005E6B6F /* Localizable.strings */; };
+		A987847729CF94AB003AD575 /* DriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847629CF94AB003AD575 /* DriversView.swift */; };
+		A987847A29CF95A4003AD575 /* DriversService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847929CF95A4003AD575 /* DriversService.swift */; };
+		A987847D29CF95CB003AD575 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847C29CF95CB003AD575 /* Driver.swift */; };
+		A987848029CF97D6003AD575 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A987847F29CF97D6003AD575 /* FirebaseFirestoreSwift */; };
+		A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987848429CFA128003AD575 /* DriversListItemView.swift */; };
 		A9CD301429C74EF2007D6C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */; };
 		A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9CD301629C74F96007D6C77 /* FirebaseAuth */; };
 		A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */; };
 		A9CD301F29C75442007D6C77 /* BetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301E29C75442007D6C77 /* BetView.swift */; };
+		A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF89A329CF901700E5A8F6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +42,14 @@
 		A91489B229BFC514005E6B6F /* LoginInputModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputModifier.swift; sourceTree = "<group>"; };
 		A91489B929BFCB36005E6B6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A91489C029BFCB7D005E6B6F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A987847629CF94AB003AD575 /* DriversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversView.swift; sourceTree = "<group>"; };
+		A987847929CF95A4003AD575 /* DriversService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversService.swift; sourceTree = "<group>"; };
+		A987847C29CF95CB003AD575 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		A987848429CFA128003AD575 /* DriversListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversListItemView.swift; sourceTree = "<group>"; };
 		A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A9CD301E29C75442007D6C77 /* BetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetView.swift; sourceTree = "<group>"; };
+		A9FF89A329CF901700E5A8F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */,
+				A987848029CF97D6003AD575 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +71,7 @@
 				A91489BA29BFCB36005E6B6F /* Localizable.strings */,
 				A914899929BFBC64005E6B6F /* porra f1 */,
 				A914899829BFBC64005E6B6F /* Products */,
+				A987847E29CF97D6003AD575 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,11 +86,14 @@
 		A914899929BFBC64005E6B6F /* porra f1 */ = {
 			isa = PBXGroup;
 			children = (
-				A9CD301D29C753FD007D6C77 /* read-bet */,
+				A987847829CF9566003AD575 /* races */,
+				A9FF89A229CF8FF400E5A8F6 /* drivers */,
+				A9CD301D29C753FD007D6C77 /* bets */,
 				A91489AF29BFC3DF005E6B6F /* shared */,
 				A91489A829BFBD5C005E6B6F /* auth */,
 				A914899A29BFBC64005E6B6F /* porra_f1App.swift */,
 				A914899C29BFBC64005E6B6F /* ContentView.swift */,
+				A9FF89A329CF901700E5A8F6 /* HomeView.swift */,
 				A914899E29BFBC65005E6B6F /* Assets.xcassets */,
 				A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */,
 				A91489A029BFBC65005E6B6F /* Preview Content */,
@@ -106,10 +122,32 @@
 		A91489AF29BFC3DF005E6B6F /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				A987848129CF98A7003AD575 /* view */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		A987847829CF9566003AD575 /* races */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = races;
+			sourceTree = "<group>";
+		};
+		A987847E29CF97D6003AD575 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A987848129CF98A7003AD575 /* view */ = {
+			isa = PBXGroup;
+			children = (
 				A91489B029BFC3F0005E6B6F /* SecureInputView.swift */,
 				A91489B229BFC514005E6B6F /* LoginInputModifier.swift */,
 			);
-			path = shared;
+			path = view;
 			sourceTree = "<group>";
 		};
 		A9CD301829C750D0007D6C77 /* View */ = {
@@ -129,12 +167,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A9CD301D29C753FD007D6C77 /* read-bet */ = {
+		A9CD301D29C753FD007D6C77 /* bets */ = {
 			isa = PBXGroup;
 			children = (
 				A9CD301E29C75442007D6C77 /* BetView.swift */,
 			);
-			path = "read-bet";
+			path = bets;
+			sourceTree = "<group>";
+		};
+		A9FF89A229CF8FF400E5A8F6 /* drivers */ = {
+			isa = PBXGroup;
+			children = (
+				A987847629CF94AB003AD575 /* DriversView.swift */,
+				A987847929CF95A4003AD575 /* DriversService.swift */,
+				A987847C29CF95CB003AD575 /* Driver.swift */,
+				A987848429CFA128003AD575 /* DriversListItemView.swift */,
+			);
+			path = drivers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +204,7 @@
 			name = "porra f1";
 			packageProductDependencies = (
 				A9CD301629C74F96007D6C77 /* FirebaseAuth */,
+				A987847F29CF97D6003AD575 /* FirebaseFirestoreSwift */,
 			);
 			productName = "porra f1";
 			productReference = A914899729BFBC64005E6B6F /* porra f1.app */;
@@ -219,10 +269,15 @@
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
+				A987847D29CF95CB003AD575 /* Driver.swift in Sources */,
+				A987847A29CF95A4003AD575 /* DriversService.swift in Sources */,
+				A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */,
 				A9CD301F29C75442007D6C77 /* BetView.swift in Sources */,
+				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
+				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,
 				A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */,
 			);
@@ -452,6 +507,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A987847F29CF97D6003AD575 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9CD301529C74F96007D6C77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		A9CD301629C74F96007D6C77 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A9CD301529C74F96007D6C77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
