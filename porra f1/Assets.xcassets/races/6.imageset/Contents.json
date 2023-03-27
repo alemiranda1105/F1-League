@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Emilia_Romagna_Circuit.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Emilia_Romagna_Circuit 1.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Emilia_Romagna_Circuit 2.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

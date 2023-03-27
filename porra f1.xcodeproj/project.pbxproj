@@ -26,6 +26,11 @@
 		A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9CD301629C74F96007D6C77 /* FirebaseAuth */; };
 		A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */; };
 		A9CD301F29C75442007D6C77 /* BetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301E29C75442007D6C77 /* BetView.swift */; };
+		A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71729D1EA7100F76F74 /* RacesView.swift */; };
+		A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71929D1EB4500F76F74 /* Race.swift */; };
+		A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71B29D1F62700F76F74 /* RacesService.swift */; };
+		A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */; };
+		A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */; };
 		A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF89A329CF901700E5A8F6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +54,11 @@
 		A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A9CD301E29C75442007D6C77 /* BetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetView.swift; sourceTree = "<group>"; };
+		A9E0C71729D1EA7100F76F74 /* RacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesView.swift; sourceTree = "<group>"; };
+		A9E0C71929D1EB4500F76F74 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		A9E0C71B29D1F62700F76F74 /* RacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesService.swift; sourceTree = "<group>"; };
+		A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDocuments.swift; sourceTree = "<group>"; };
+		A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesListItemView.swift; sourceTree = "<group>"; };
 		A9FF89A329CF901700E5A8F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A987848129CF98A7003AD575 /* view */,
+				A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -130,6 +141,10 @@
 		A987847829CF9566003AD575 /* races */ = {
 			isa = PBXGroup;
 			children = (
+				A9E0C71729D1EA7100F76F74 /* RacesView.swift */,
+				A9E0C71929D1EB4500F76F74 /* Race.swift */,
+				A9E0C71B29D1F62700F76F74 /* RacesService.swift */,
+				A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */,
 			);
 			path = races;
 			sourceTree = "<group>";
@@ -266,16 +281,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
 				A987847D29CF95CB003AD575 /* Driver.swift in Sources */,
 				A987847A29CF95A4003AD575 /* DriversService.swift in Sources */,
+				A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */,
 				A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */,
+				A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */,
 				A9CD301F29C75442007D6C77 /* BetView.swift in Sources */,
 				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
+				A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */,
+				A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
 				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,

@@ -18,7 +18,7 @@ struct HomeView: View {
                 .tabItem {
                     Label("drivers-view", systemImage: "steeringwheel")
                 }
-            BetView()
+            RacesView()
                 .tabItem {
                     Label("races-view", systemImage: "road.lanes.curved.left")
                 }

@@ -15,7 +15,7 @@ class DriversService: ObservableObject {
     
     func getAllDrivers() async -> ([Driver], String?) {
         var drivers = [Driver]()
-        let ref = driversDb.collection("drivers")
+        let ref = driversDb.collection(FirestoreDocuments.DRIVERS.rawValue)
         do {
             let snapshot = try await ref.getDocuments()
             try snapshot.documents.forEach { document in
