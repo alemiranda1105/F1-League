@@ -9,12 +9,12 @@ import Foundation
 import FirebaseFirestore
 
 class DriversService: ObservableObject {
-    @Published var error: String?
-    
     private let driversDb = Firestore.firestore()
     
-    func getAllDrivers() async -> ([Driver], String?) {
+    func getAllDrivers() async -> ([Driver], String) {
         var drivers = [Driver]()
+        var errorMessage = ""
+        
         let ref = driversDb.collection(FirestoreDocuments.DRIVERS.rawValue)
         do {
             let snapshot = try await ref.getDocuments()
@@ -23,8 +23,8 @@ class DriversService: ObservableObject {
                 drivers.append(driver)
             }
         } catch {
-            self.error = error.localizedDescription
+            errorMessage = error.localizedDescription
         }
-        return (drivers, error)
+        return (drivers, errorMessage)
     }
 }

@@ -11,14 +11,13 @@ struct DriversView: View {
     @ObservedObject private var driversService = DriversService()
     
     @State private var drivers = [Driver]()
-    @State private var error: String?
+    @State private var error = ""
     @State private var pending = true
     
     private func loadDrivers() {
         Task {
             (self.drivers, self.error) = await driversService.getAllDrivers()
-            print(self.drivers)
-            self.pending = !(error == nil || drivers.isEmpty)
+            self.pending = !(error.isEmpty || drivers.isEmpty)
         }
     }
     
@@ -38,6 +37,9 @@ struct DriversView: View {
                 }
             }
             .navigationTitle("drivers-view")
+            .refreshable {
+                loadDrivers()
+            }
             .onAppear {
                 loadDrivers()
             }

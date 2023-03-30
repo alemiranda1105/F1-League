@@ -16,11 +16,10 @@ struct RacesListItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            VStack {
-                Image(String(race.round))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            Image(String(race.round))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
             
             Spacer()
             
