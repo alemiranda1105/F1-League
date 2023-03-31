@@ -22,10 +22,12 @@ final class AuthViewModel: ObservableObject {
                 return
             }
             Task {
-                let (userData, error) = await self.appUserService.getUserByEmail(_email: (user?.email)!)
+                let (userData, error) = await self.appUserService.getUserByEmail(_email: (user?.email) ?? "")
+                // TODO: Set error when user is not found
                 if error.isEmpty {
                     self.user = user
                     self.appUser = userData
+                    UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
                 } else {
                     self.user = nil
                 }
@@ -41,6 +43,7 @@ final class AuthViewModel: ObservableObject {
             if error.isEmpty {
                 self.user = authResult.user
                 self.appUser = appUser
+                UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             } else {
                 throw "The user could not be created"
             }
@@ -59,6 +62,7 @@ final class AuthViewModel: ObservableObject {
             if error.isEmpty {
                 self.user = authResult.user
                 self.appUser = appUser
+                UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             } else {
                 throw "The user could was not found"
             }

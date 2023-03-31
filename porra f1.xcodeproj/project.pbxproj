@@ -22,6 +22,10 @@
 		A98433F329D5D2AB00252EF0 /* AppUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433F229D5D2AB00252EF0 /* AppUserService.swift */; };
 		A98433F629D5D72600252EF0 /* Error+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433F529D5D72600252EF0 /* Error+String.swift */; };
 		A98433F829D5D89D00252EF0 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433F729D5D89D00252EF0 /* GroupsView.swift */; };
+		A98433FA29D5DB4900252EF0 /* BetGroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433F929D5DB4900252EF0 /* BetGroupsService.swift */; };
+		A98433FD29D6DD5200252EF0 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433FC29D6DD5200252EF0 /* CreateGroupView.swift */; };
+		A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98433FF29D6E48C00252EF0 /* AddGroupMemberView.swift */; };
+		A984340229D6ECE500252EF0 /* NewGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = A984340129D6ECE500252EF0 /* NewGroupMember.swift */; };
 		A987847729CF94AB003AD575 /* DriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847629CF94AB003AD575 /* DriversView.swift */; };
 		A987847A29CF95A4003AD575 /* DriversService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847929CF95A4003AD575 /* DriversService.swift */; };
 		A987847D29CF95CB003AD575 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847C29CF95CB003AD575 /* Driver.swift */; };
@@ -30,7 +34,6 @@
 		A9CD301429C74EF2007D6C77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */; };
 		A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9CD301629C74F96007D6C77 /* FirebaseAuth */; };
 		A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */; };
-		A9CD301F29C75442007D6C77 /* BetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301E29C75442007D6C77 /* BetView.swift */; };
 		A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71729D1EA7100F76F74 /* RacesView.swift */; };
 		A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71929D1EB4500F76F74 /* Race.swift */; };
 		A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71B29D1F62700F76F74 /* RacesService.swift */; };
@@ -57,13 +60,16 @@
 		A98433F229D5D2AB00252EF0 /* AppUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserService.swift; sourceTree = "<group>"; };
 		A98433F529D5D72600252EF0 /* Error+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+String.swift"; sourceTree = "<group>"; };
 		A98433F729D5D89D00252EF0 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
+		A98433F929D5DB4900252EF0 /* BetGroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetGroupsService.swift; sourceTree = "<group>"; };
+		A98433FC29D6DD5200252EF0 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
+		A98433FF29D6E48C00252EF0 /* AddGroupMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupMemberView.swift; sourceTree = "<group>"; };
+		A984340129D6ECE500252EF0 /* NewGroupMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupMember.swift; sourceTree = "<group>"; };
 		A987847629CF94AB003AD575 /* DriversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversView.swift; sourceTree = "<group>"; };
 		A987847929CF95A4003AD575 /* DriversService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversService.swift; sourceTree = "<group>"; };
 		A987847C29CF95CB003AD575 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		A987848429CFA128003AD575 /* DriversListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversListItemView.swift; sourceTree = "<group>"; };
 		A9CD301329C74EF2007D6C77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		A9CD301E29C75442007D6C77 /* BetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetView.swift; sourceTree = "<group>"; };
 		A9E0C71729D1EA7100F76F74 /* RacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesView.swift; sourceTree = "<group>"; };
 		A9E0C71929D1EB4500F76F74 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		A9E0C71B29D1F62700F76F74 /* RacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesService.swift; sourceTree = "<group>"; };
@@ -106,11 +112,12 @@
 		A914899929BFBC64005E6B6F /* porra f1 */ = {
 			isa = PBXGroup;
 			children = (
+				A98433FE29D6E47100252EF0 /* add-group-member */,
+				A98433FB29D6DD3D00252EF0 /* create-group */,
 				A98433F129D5D29600252EF0 /* read-user */,
 				A98433EE29D5D12D00252EF0 /* read-groups */,
 				A987847829CF9566003AD575 /* read-races */,
 				A9FF89A229CF8FF400E5A8F6 /* read-drivers */,
-				A9CD301D29C753FD007D6C77 /* bets */,
 				A91489AF29BFC3DF005E6B6F /* shared */,
 				A91489A829BFBD5C005E6B6F /* auth */,
 				A914899A29BFBC64005E6B6F /* porra_f1App.swift */,
@@ -157,6 +164,7 @@
 			children = (
 				A98433EF29D5D14100252EF0 /* BetGroup.swift */,
 				A98433F729D5D89D00252EF0 /* GroupsView.swift */,
+				A98433F929D5DB4900252EF0 /* BetGroupsService.swift */,
 			);
 			path = "read-groups";
 			sourceTree = "<group>";
@@ -175,6 +183,23 @@
 				A98433F529D5D72600252EF0 /* Error+String.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		A98433FB29D6DD3D00252EF0 /* create-group */ = {
+			isa = PBXGroup;
+			children = (
+				A98433FC29D6DD5200252EF0 /* CreateGroupView.swift */,
+			);
+			path = "create-group";
+			sourceTree = "<group>";
+		};
+		A98433FE29D6E47100252EF0 /* add-group-member */ = {
+			isa = PBXGroup;
+			children = (
+				A98433FF29D6E48C00252EF0 /* AddGroupMemberView.swift */,
+				A984340129D6ECE500252EF0 /* NewGroupMember.swift */,
+			);
+			path = "add-group-member";
 			sourceTree = "<group>";
 		};
 		A987847829CF9566003AD575 /* read-races */ = {
@@ -219,14 +244,6 @@
 				A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A9CD301D29C753FD007D6C77 /* bets */ = {
-			isa = PBXGroup;
-			children = (
-				A9CD301E29C75442007D6C77 /* BetView.swift */,
-			);
-			path = bets;
 			sourceTree = "<group>";
 		};
 		A9FF89A229CF8FF400E5A8F6 /* read-drivers */ = {
@@ -322,9 +339,11 @@
 			files = (
 				A98433F629D5D72600252EF0 /* Error+String.swift in Sources */,
 				A98433F029D5D14100252EF0 /* BetGroup.swift in Sources */,
+				A98433FA29D5DB4900252EF0 /* BetGroupsService.swift in Sources */,
 				A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
+				A984340229D6ECE500252EF0 /* NewGroupMember.swift in Sources */,
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
 				A98433F829D5D89D00252EF0 /* GroupsView.swift in Sources */,
 				A987847D29CF95CB003AD575 /* Driver.swift in Sources */,
@@ -333,15 +352,16 @@
 				A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */,
 				A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */,
 				A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */,
-				A9CD301F29C75442007D6C77 /* BetView.swift in Sources */,
 				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
 				A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */,
 				A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
+				A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */,
 				A98433ED29D5D0E200252EF0 /* AppUser.swift in Sources */,
 				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
+				A98433FD29D6DD5200252EF0 /* CreateGroupView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,
 				A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */,
 			);

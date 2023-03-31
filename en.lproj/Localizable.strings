@@ -29,3 +29,19 @@
 "groups-view" = "Groups";
 "races-view" = "Races";
 "loading-text" = "Loading...";
+
+/* GroupsView */
+"no-groups-found" = "We haven't found any group, but don't worry, you can create a new one right now";
+"create-group" = "Create a new group";
+
+/* CreateGroupView */
+"group-name-label" = "Group's name";
+"create-group-button" = "Create group";
+"cancel-button" = "Cancel";
+"group-name-field" = "Name";
+"member-list" = "Members";
+
+/* AddMemberView */
+"add-member-view" = "Add member";
+"save-members" = "Save members";
+"not-users-found-text" = "We couldn't find any user";

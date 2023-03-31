@@ -29,3 +29,19 @@
 "groups-view" = "Grupos";
 "races-view" = "Carreras";
 "loading-text" = "Cargando...";
+
+/* GroupsView */
+"no-groups-found" = "No hemos encontrados ningún grupo, pero no te preocupes, puedes crear uno ahora mismo";
+"create-group" = "Crear grupo";
+
+/* CreateGroupView */
+"group-name-label" = "Nombre del group";
+"create-group-button" = "Crear grupo";
+"cancel-button" = "Cancelar";
+"group-name-field" = "Nombre";
+"member-list" = "Miembros";
+
+/* AddMemberView */
+"add-member-view" = "Añadir usuario";
+"save-members" = "Guardar usuario";
+"not-users-found-text" = "No hemos encotrado a ningún usuario";

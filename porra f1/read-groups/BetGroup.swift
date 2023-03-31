@@ -8,8 +8,8 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct BetGroup {
+struct BetGroup: Codable {
     @DocumentID var id: String?
     let name: String
-    let users: [AppUser]
+    let users: [String]
 }
