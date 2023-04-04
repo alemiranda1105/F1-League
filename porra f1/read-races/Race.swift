@@ -18,6 +18,15 @@ struct Race: Codable {
     func getRaceName() -> String {
         return "\(String(self.round)). \(self.raceName)"
     }
+    
+    func getRaceDatetime() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: date) {
+            return date
+        }
+        return Date()
+    }
 
 }
 

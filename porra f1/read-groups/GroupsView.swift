@@ -55,9 +55,11 @@ struct GroupsView: View {
                         }
                         .padding()
                     } else {
-                        ScrollView {
-                            LazyVStack {
-                                Text("You have: \(groups.count)")
+                        List($groups, id: \.id) { $group in
+                            NavigationLink(destination: GroupDetailsView(group: $group)) {
+                                Text(group.name)
+                                    .font(.system(size: 22, weight: .bold))
+                                    .padding(8)
                             }
                         }
                     }
@@ -66,6 +68,11 @@ struct GroupsView: View {
             .navigationTitle("groups-view")
             .task {
                 await self.loadGroups()
+            }
+            .refreshable {
+                Task {
+                    await self.loadGroups()
+                }
             }
             .sheet(isPresented: $showCreateGroupSheet, onDismiss: {
                 self.showCreateGroupSheet = false

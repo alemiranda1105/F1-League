@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90049E329DC307E00740F1D /* GroupDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E229DC307E00740F1D /* GroupDetailsView.swift */; };
+		A90049E529DC31C500740F1D /* GroupDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */; };
+		A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E629DC5B0600740F1D /* GroupRaceListItem.swift */; };
 		A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914899A29BFBC64005E6B6F /* porra_f1App.swift */; };
 		A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914899C29BFBC64005E6B6F /* ContentView.swift */; };
 		A914899F29BFBC65005E6B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914899E29BFBC65005E6B6F /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A90049E229DC307E00740F1D /* GroupDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsView.swift; sourceTree = "<group>"; };
+		A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewModel.swift; sourceTree = "<group>"; };
+		A90049E629DC5B0600740F1D /* GroupRaceListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceListItem.swift; sourceTree = "<group>"; };
 		A914899729BFBC64005E6B6F /* porra f1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "porra f1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A914899A29BFBC64005E6B6F /* porra_f1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = porra_f1App.swift; sourceTree = "<group>"; };
 		A914899C29BFBC64005E6B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90049E129DC306900740F1D /* read-group-details */ = {
+			isa = PBXGroup;
+			children = (
+				A90049E229DC307E00740F1D /* GroupDetailsView.swift */,
+				A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */,
+				A90049E629DC5B0600740F1D /* GroupRaceListItem.swift */,
+			);
+			path = "read-group-details";
+			sourceTree = "<group>";
+		};
 		A914898E29BFBC64005E6B6F = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 		A914899929BFBC64005E6B6F /* porra f1 */ = {
 			isa = PBXGroup;
 			children = (
+				A90049E129DC306900740F1D /* read-group-details */,
 				A98433FE29D6E47100252EF0 /* add-group-member */,
 				A98433FB29D6DD3D00252EF0 /* create-group */,
 				A98433F129D5D29600252EF0 /* read-user */,
@@ -354,12 +371,15 @@
 				A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */,
 				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
+				A90049E529DC31C500740F1D /* GroupDetailsViewModel.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
 				A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */,
+				A90049E329DC307E00740F1D /* GroupDetailsView.swift in Sources */,
 				A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
 				A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */,
 				A98433ED29D5D0E200252EF0 /* AppUser.swift in Sources */,
+				A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */,
 				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
 				A98433FD29D6DD5200252EF0 /* CreateGroupView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,
