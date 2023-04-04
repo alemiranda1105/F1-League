@@ -45,3 +45,12 @@
 "add-member-view" = "Añadir usuario";
 "save-members" = "Guardar usuario";
 "not-users-found-text" = "No hemos encotrado a ningún usuario";
+
+/* GroupDetailsView */
+"current-race-text" = "Carrera actual";
+"next-races-text" = "Siguientes carreras";
+"prev-races-text" = "Carreras anteriores";
+"hide-next-races-text" = "Ocultar siguientes carreras";
+"show-next-races-text" = "Mostrar siguientes carreras";
+"hide-prev-races-text" = "Ocultar carreras anteriores";
+"show-prev-races-text" = "Mostrar carreras anteriores";

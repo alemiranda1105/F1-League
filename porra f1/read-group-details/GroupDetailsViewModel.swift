@@ -8,22 +8,28 @@
 import Foundation
 
 @MainActor class GroupDetailsViewModel: ObservableObject {
-    private var racesService = RacesService()
+    private let racesService = RacesService()
     
-    @Published var races: [Race]
-    @Published var pending: Bool
-    @Published var error: String
-    
-    init(races: [Race] = [], pending: Bool = true, error: String = "") {
-        self.races = races
-        self.pending = pending
-        self.error = error
-    }
+    @Published var currentRace: Race? = nil
+    @Published var nextRaces: [Race] = []
+    @Published var prevRaces: [Race] = []
+    @Published var pending: Bool = true
+    @Published var error: String = ""
 
     
     func loadAllRaces() async {
         self.pending = true
-        (self.races, self.error) = await racesService.getAllRaces()
+        let (races, error) = await racesService.getAllRaces()
+        
+        self.error = error
+        if error.isEmpty {
+            let now = Date()
+            self.nextRaces = races.filter({ $0.getRaceDatetime() >= now })
+            self.prevRaces = races.filter({ $0.getRaceDatetime() < now })
+            
+            self.currentRace = self.nextRaces.removeFirst()
+        }
+        
         self.pending = false 
     }
 }

@@ -11,6 +11,20 @@ struct GroupDetailsView: View {
     @ObservedObject var groupDetailsVm = GroupDetailsViewModel()
     @Binding var group: BetGroup
     
+    @State private var showAllNextRaces = false
+    @State private var showAllPrevRaces = false
+    private var currentRace: Binding<Race> {
+        Binding<Race>(
+            get: {
+                // it won't be nil
+                groupDetailsVm.currentRace!
+            },
+            set: { newValue in
+                groupDetailsVm.currentRace = newValue
+            }
+        )
+    }
+    
     private func loadRaces() {
         Task {
             await groupDetailsVm.loadAllRaces()
@@ -27,8 +41,59 @@ struct GroupDetailsView: View {
                 } else if !groupDetailsVm.error.isEmpty {
                     Text(groupDetailsVm.error)
                 } else {
-                    List($groupDetailsVm.races, id: \.id) { $race in
-                        GroupRaceListItem(race: $race)
+                    Form {
+                        if groupDetailsVm.currentRace != nil {
+                            Section {
+                                GroupRaceListItem(race: currentRace)
+                            } header: {
+                                Text("current-race-text")
+                            }
+                            .headerProminence(.increased)
+                        }
+                        
+                        Section {
+                            if showAllNextRaces {
+                                List($groupDetailsVm.nextRaces, id: \.id) { $race in
+                                    GroupRaceListItem(race: $race)
+                                }
+                            } else {
+                                GroupRaceListItem(race: $groupDetailsVm.nextRaces.first!)
+                            }
+                            Button {
+                                withAnimation {
+                                    showAllNextRaces.toggle()
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: showAllNextRaces ? "chevron.up" : "chevron.down")
+                                    Text(showAllNextRaces ? "hide-next-races-text" : "show-next-races-text")
+                                }
+                            }
+                        } header: {
+                            Text("next-races-text")
+                        }
+                        
+                        Section {
+                            if showAllPrevRaces {
+                                List($groupDetailsVm.prevRaces, id: \.id) { $race in
+                                    GroupRaceListItem(race: $race)
+                                }
+                            } else {
+                                GroupRaceListItem(race: $groupDetailsVm.prevRaces.first!)
+                            }
+                            Button {
+                                withAnimation {
+                                    showAllPrevRaces.toggle()
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: showAllPrevRaces ? "chevron.up" : "chevron.down")
+                                    Text(showAllPrevRaces ? "hide-prev-races-text" : "show-prev-races-text")
+                                }
+                            }
+                        } header: {
+                            Text("prev-races-text")
+                        }
                     }
                 }
             }
@@ -46,45 +111,6 @@ struct GroupDetailsView: View {
 struct GroupDetailsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        GroupDetailsView(groupDetailsVm: GroupDetailsViewModel(races: [
-            Race(
-                id: "1",
-                circuit: Circuit(
-                    location: CircuitLocation(country: "Spain", lat: "22", locality: "22", long: "22"),
-                    circuitId: "1",
-                    circuitName: "Test Circuit",
-                    url: "http://en.wikipedia.org/wiki/Silverstone_Circuit"
-                ),
-                firstPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                secondPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                thirdPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                qualifying: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                raceName: "Test GP",
-                time: "19;19;0Z",
-                url: "",
-                date: "2023-10-10",
-                round: 1,
-                season: 2023
-            ),
-            Race(
-                id: "2",
-                circuit: Circuit(
-                    location: CircuitLocation(country: "Spain", lat: "22", locality: "22", long: "22"),
-                    circuitId: "1",
-                    circuitName: "Test Circuit",
-                    url: "http://en.wikipedia.org/wiki/Silverstone_Circuit"
-                ),
-                firstPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                secondPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                thirdPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                qualifying: RaceSession(date: "11-11-1111", time: "21:01Z"),
-                raceName: "Test GP",
-                time: "19;19;0Z",
-                url: "",
-                date: "2023-10-10",
-                round: 2    ,
-                season: 2023
-            )
-        ], pending: false, error: ""), group: .constant(BetGroup(id: "1", name: "Test 1", users: ["test1@test.com", "test2@test.com", "test3@test.com"])))
+        GroupDetailsView(group: .constant(BetGroup(id: "1", name: "Test 1", users: ["test1@test.com", "test2@test.com", "test3@test.com"])))
     }
 }

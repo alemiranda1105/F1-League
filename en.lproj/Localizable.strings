@@ -45,3 +45,12 @@
 "add-member-view" = "Add member";
 "save-members" = "Save members";
 "not-users-found-text" = "We couldn't find any user";
+
+/* GroupDetailsView */
+"current-race-text" = "Current race";
+"next-races-text" = "Next races";
+"prev-races-text" = "Previous races";
+"hide-next-races-text" = "Hide next races";
+"show-next-races-text" = "Show next races";
+"hide-prev-races-text" = "Hide previous races";
+"show-prev-races-text" = "Show previous races";
