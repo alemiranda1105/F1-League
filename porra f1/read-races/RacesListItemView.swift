@@ -16,7 +16,7 @@ struct RacesListItemView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(String(race.round))
+            Image("GP-\(race.round)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
