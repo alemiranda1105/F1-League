@@ -12,7 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if authViewModel.authUser != nil {
+            if authViewModel.appUser != nil {
                 HomeView()
             } else {
                 WelcomeView()

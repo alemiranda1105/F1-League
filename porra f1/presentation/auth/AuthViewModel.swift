@@ -9,7 +9,6 @@ import SwiftUI
 import FirebaseAuth
 
 @MainActor class AuthViewModel: ObservableObject {
-    @Published var authUser: User?
     @Published var appUser: AppUser?
     @Published var errorMessage: String = ""
     
@@ -24,13 +23,13 @@ import FirebaseAuth
             
             Task {
                 let (userData, error) = await self.appUserService.getUserByEmail(email: (authUser?.email ?? ""))
-                if error.isEmpty {
-                    self.authUser = authUser
-                    self.appUser = userData
-                    UserDefaults.standard.set(self.authUser?.email, forKey: "userEmail")
-                } else {
-                    self.authUser = nil
+                if !error.isEmpty || userData == nil {
+                    self.authService.revokeAccess()
+                    return
                 }
+                
+                self.appUser = AppUser(email: userData!.email)
+                UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             }
         }
     }
@@ -43,6 +42,12 @@ import FirebaseAuth
             return
         }
         
+        guard authUser != nil else {
+            print("User with email \(emailAddress) not found ")
+            self.errorMessage = "user-not-found"
+            return
+        }
+        
         let (appUser, createUserError) = await self.appUserService.createNewUser(email: emailAddress)
         guard createUserError == ""  else {
             print("There was an error: \(createUserError)")
@@ -50,7 +55,6 @@ import FirebaseAuth
             return
         }
         
-        self.authUser = authUser
         self.appUser = appUser
         UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
     }
@@ -60,7 +64,6 @@ import FirebaseAuth
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             let (appUser, error) = await self.appUserService.createNewUser(email: email)
             if error.isEmpty {
-                self.authUser = authResult.user
                 self.appUser = appUser
                 UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             } else {
