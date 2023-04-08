@@ -33,7 +33,7 @@ struct CreateGroupView: View {
     }
     
     private func disableSubmitButton() -> Bool {
-        return self.groupName.isEmpty || self.selectedUsers.count < 2
+        return self.groupName.isEmpty || self.selectedUsers.count < 1
     }
     
     var body: some View {

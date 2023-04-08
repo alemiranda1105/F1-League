@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var authViewModel: AuthViewModel
+    
     var body: some View {
         TabView {
             GroupsView()
@@ -27,6 +29,7 @@ struct HomeView: View {
                     Label("profile-view", systemImage: "person.fill")
                 }
         }
+        .environmentObject(authViewModel)
     }
 }
 
