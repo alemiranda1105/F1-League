@@ -12,6 +12,10 @@ class AuthService {
     private let authRepository: AuthRepository = AuthRepositoryImpl()
     
     func signUpWithEmailAndPassowrd(emailAddress: String, password: String) async -> (User?, String) {
+        return await authRepository.signUpWithEmailAndPassword(emailAddress: emailAddress, password: password)
+    }
+    
+    func signInWithEmailAndPassowrd(emailAddress: String, password: String) async -> (User?, String) {
         return await authRepository.signInWithEmailAndPassword(email: emailAddress, password: password)
     }
     

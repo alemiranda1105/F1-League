@@ -11,10 +11,9 @@ import FirebaseAuth
 class AuthRepositoryImpl: AuthRepository {
     var currentUser: User? = Auth.auth().currentUser
     
-    func signUpWithEmailAndPassowrd(emailAddress: String, password: String) async -> (User?, String) {
+    func signUpWithEmailAndPassword(emailAddress: String, password: String) async -> (User?, String) {
         do {
             let authResult = try await Auth.auth().createUser(withEmail: emailAddress, password: password)
-            print(authResult)
             return (authResult.user, "")
         } catch {
             print(error.localizedDescription)
@@ -23,7 +22,13 @@ class AuthRepositoryImpl: AuthRepository {
     }
     
     func signInWithEmailAndPassword(email: String, password: String) async -> (User?, String) {
-        return (nil, "")
+        do {
+            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            return (authResult.user, "")
+        } catch {
+            print(error.localizedDescription)
+            return (nil, error.localizedDescription)
+        }
     }
     
     

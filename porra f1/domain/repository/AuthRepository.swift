@@ -11,7 +11,7 @@ import FirebaseAuth
 protocol AuthRepository {
     var currentUser: User? { get set }
     
-    func signUpWithEmailAndPassowrd(emailAddress: String, password: String) async -> (User?, String)
+    func signUpWithEmailAndPassword(emailAddress: String, password: String) async -> (User?, String)
     
     func signInWithEmailAndPassword(email: String, password: String) async -> (User?, String)
     

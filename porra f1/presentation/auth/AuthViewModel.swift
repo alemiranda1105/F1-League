@@ -60,19 +60,34 @@ import FirebaseAuth
     }
     
     func signIn(email: String, password: String) async {
-        do {
-            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
-            let (appUser, error) = await self.appUserService.createNewUser(email: email)
-            if error.isEmpty {
-                self.appUser = appUser
-                UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
-            } else {
-                throw "The user could was not found"
-            }
-        } catch {
-            print("There was an error: \(error.localizedDescription)")
-            self.errorMessage = error.localizedDescription
+        let (authUser, error) = await authService.signInWithEmailAndPassowrd(emailAddress: email, password: password)
+        guard error == ""  else {
+            print("There was an error: \(error)")
+            self.errorMessage = error
+            return
         }
+        
+        guard authUser != nil else {
+            print("User with email \(email) not found ")
+            self.errorMessage = "user-not-found"
+            return
+        }
+        
+        let (appUser, errorMessage) = await self.appUserService.getUserByEmail(email: email)
+        guard errorMessage == ""  else {
+            print("There was an error: \(error)")
+            self.errorMessage = error
+            return
+        }
+        
+        guard appUser != nil else {
+            print("User with email \(email) not found ")
+            self.errorMessage = "user-not-found"
+            return
+        }
+        
+        self.appUser = appUser
+        UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
     }
-    
+
 }
