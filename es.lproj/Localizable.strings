@@ -16,6 +16,7 @@
 "login" = "Iniciar sesión";
 "email" = "Correo electrónico";
 "password" = "Contraseña";
+"user-not-found" = "La contraseña o el correo son incorrectos, inténtelo de nuevo, por favor";
 
 /* RegisterView */
 "create-account" = "Crear cuenta";
@@ -23,6 +24,8 @@
 "verify-email" = "Verificar correo electrónico";
 "password" = "Contraseña";
 "email-not-verify-error" = "Los correos electrónicos no coinciden";
+"username" = "Nombre de usuario";
+"repeated-username" = "El nombre de usuario está en uso, intente con uno distinto";
 
 /* HomeView */
 "drivers-view" = "Pilotos";

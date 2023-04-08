@@ -18,24 +18,31 @@ import FirebaseAuth
     func listenToAuthState() {
         Auth.auth().addStateDidChangeListener { _, authUser in
             guard authUser != nil else {
+                self.appUser = nil
                 return
             }
             
             Task {
                 let (userData, error) = await self.appUserService.getUserByEmail(email: (authUser?.email ?? ""))
                 if !error.isEmpty || userData == nil {
-                    self.authService.revokeAccess()
+                    self.authService.signOut()
                     return
                 }
                 
-                self.appUser = AppUser(email: userData!.email)
+                self.appUser = AppUser(email: userData!.email, username: userData!.username)
                 UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             }
         }
     }
     
-    func signUp(emailAddress: String, password: String) async {
-        let (authUser, error) = await authService.signUpWithEmailAndPassowrd(emailAddress: emailAddress, password: password)
+    func createAccount(emailAddress: String, password: String, username: String) async {
+        let repeatedUser = await appUserService.searchUserByUsername(username: username)
+        guard repeatedUser == nil else {
+            self.errorMessage = "repeated-username"
+            return
+        }
+        let (authUser, error) = await authService.signUpWithEmailAndPassowrd(emailAddress: emailAddress, password: password, username: username)
+        
         guard error == ""  else {
             print("There was an error: \(error)")
             self.errorMessage = error
@@ -48,7 +55,7 @@ import FirebaseAuth
             return
         }
         
-        let (appUser, createUserError) = await self.appUserService.createNewUser(email: emailAddress)
+        let (appUser, createUserError) = await self.appUserService.createNewUser(newUser: AppUser(email: emailAddress, username: username))
         guard createUserError == ""  else {
             print("There was an error: \(createUserError)")
             self.errorMessage = createUserError
@@ -88,6 +95,11 @@ import FirebaseAuth
         
         self.appUser = appUser
         UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
+    }
+    
+    func signOut() {
+        authService.signOut()
+        self.appUser = nil
     }
 
 }

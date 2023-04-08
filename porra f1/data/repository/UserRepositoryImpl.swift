@@ -42,7 +42,6 @@ class UserRepositoryImpl: UserRepository {
     
     func searchUsersByEmail(email: String) async -> [AppUser] {
         var users = [AppUser]()
-        print(email)
 
         let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue)
         do {
@@ -59,16 +58,33 @@ class UserRepositoryImpl: UserRepository {
         return users
     }
     
-    func saveUser(email: String) async -> (AppUser?, String) {
+    func searchUserByUsername(username: String) async -> AppUser? {
+        var user: AppUser? = nil
+        
+        let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue)
+        do {
+            let snapshot = try await ref.whereField("username", isEqualTo: username).getDocuments()
+            try snapshot.documents.forEach { document in
+                let userData =  try document.data(as: AppUser.self)
+                user = userData
+            }
+        } catch {
+            print(error)
+        }
+        return user
+    }
+    
+    func saveUser(newUser: AppUser) async -> (AppUser?, String) {
         var user: AppUser? = nil
         var errorMessage = ""
 
         let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue)
         do {
             let snapshot = try await ref.addDocument(data: [
-                "email": email
+                "email": newUser.email,
+                "username": newUser.username
             ])
-            user = AppUser(id: snapshot.documentID ,email: email)
+            user = AppUser(id: snapshot.documentID ,email: newUser.email, username: newUser.username)
         } catch {
             print(error.localizedDescription)
             errorMessage = error.localizedDescription

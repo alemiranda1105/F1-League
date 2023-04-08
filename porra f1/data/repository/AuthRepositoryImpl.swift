@@ -9,11 +9,13 @@ import Foundation
 import FirebaseAuth
 
 class AuthRepositoryImpl: AuthRepository {
+    let auth = FirebaseAuth.Auth.auth()
     var currentUser: User? = Auth.auth().currentUser
     
     func signUpWithEmailAndPassword(emailAddress: String, password: String) async -> (User?, String) {
         do {
             let authResult = try await Auth.auth().createUser(withEmail: emailAddress, password: password)
+            self.currentUser = authResult.user
             return (authResult.user, "")
         } catch {
             print(error.localizedDescription)
@@ -24,6 +26,7 @@ class AuthRepositoryImpl: AuthRepository {
     func signInWithEmailAndPassword(email: String, password: String) async -> (User?, String) {
         do {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.currentUser = authResult.user
             return (authResult.user, "")
         } catch {
             print(error.localizedDescription)
@@ -31,13 +34,13 @@ class AuthRepositoryImpl: AuthRepository {
         }
     }
     
-    
-    func revokeAccess() async {
+    func signOut() {
         do {
-            try await Auth.auth().currentUser?.delete()
+            try auth.signOut()
         } catch {
             print(error.localizedDescription)
         }
+        self.currentUser = nil
     }
     
     

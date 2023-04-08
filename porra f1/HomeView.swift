@@ -22,6 +22,10 @@ struct HomeView: View {
                 .tabItem {
                     Label("races-view", systemImage: "road.lanes.curved.left")
                 }
+            UserProfileView()
+                .tabItem {
+                    Label("profile-view", systemImage: "person.fill")
+                }
         }
     }
 }

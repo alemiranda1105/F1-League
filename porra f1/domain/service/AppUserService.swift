@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 class AppUserService {
     private let appUserRepository = UserRepositoryImpl()
@@ -23,9 +22,12 @@ class AppUserService {
         return await appUserRepository.searchUsersByEmail(email: email)
     }
     
+    func searchUserByUsername(username: String) async -> AppUser? {
+        return await appUserRepository.searchUserByUsername(username: username)
+    }
     
-    func createNewUser(email: String) async -> (AppUser?, String) {
-        return await appUserRepository.saveUser(email: email)
+    func createNewUser(newUser: AppUser) async -> (AppUser?, String) {
+        return await appUserRepository.saveUser(newUser: newUser)
     }
     
 }

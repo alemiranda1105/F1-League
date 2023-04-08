@@ -15,6 +15,8 @@ protocol UserRepository {
     
     func searchUsersByEmail(email: String) async -> [AppUser]
     
-    func saveUser(email: String) async -> (AppUser?, String)
+    func searchUserByUsername(username: String) async -> AppUser?
+    
+    func saveUser(newUser: AppUser) async -> (AppUser?, String)
     
 }

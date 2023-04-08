@@ -16,6 +16,7 @@
 "login" = "Log in";
 "email" = "Email";
 "password" = "Password";
+"user-not-found" = "The email/password are incorrect, please, try again";
 
 /* RegisterView */
 "create-account" = "Create account";
@@ -23,6 +24,8 @@
 "verify-email" = "Verify email";
 "password" = "Password";
 "email-not-verify-error" = "Emails are different";
+"username" = "Username";
+"repeated-username" = "Your username is in use, try another one.";
 
 /* HomeView */
 "drivers-view" = "Drivers";
