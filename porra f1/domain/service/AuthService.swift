@@ -17,12 +17,7 @@ class AuthService {
             return (nil, error)
         }
         
-        let updateError = await self.updateCurrentUserUsername(username: username)
-        guard updateError.isEmpty else {
-            return (nil, updateError)
-        }
-        
-        return (getCurrentUser(), error)
+        return (authUser, error)
     }
     
     func signInWithEmailAndPassowrd(emailAddress: String, password: String) async -> (User?, String) {
@@ -31,27 +26,6 @@ class AuthService {
     
     func getCurrentUser() -> User? {
         return authRepository.currentUser
-    }
-    
-    func updateCurrentUserUsername(username: String) async -> String {
-        var errorMessage = ""
-        
-        let currentUser = getCurrentUser()
-        guard currentUser != nil else {
-            errorMessage = "user-not-found"
-            return errorMessage
-        }
-        
-        let changeRequest = getCurrentUser()!.createProfileChangeRequest()
-        changeRequest.displayName = username
-        do {
-            try await changeRequest.commitChanges()
-        } catch {
-            print(error.localizedDescription)
-            errorMessage = error.localizedDescription
-        }
-        
-        return errorMessage
     }
     
     func signOut() {

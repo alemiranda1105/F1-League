@@ -19,6 +19,7 @@ class AuthRepositoryImpl: AuthRepository {
             return (authResult.user, "")
         } catch {
             print(error.localizedDescription)
+            print("WTFFFFF")
             return (nil, error.localizedDescription)
         }
     }
