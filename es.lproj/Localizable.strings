@@ -57,3 +57,7 @@
 "show-next-races-text" = "Mostrar siguientes carreras";
 "hide-prev-races-text" = "Ocultar carreras anteriores";
 "show-prev-races-text" = "Mostrar carreras anteriores";
+
+/* UserProfile */
+"sign-out" = "Cerrar sesión";
+"profile-view" = "Perfil";
