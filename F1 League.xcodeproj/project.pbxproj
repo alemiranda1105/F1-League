@@ -46,6 +46,8 @@
 		A987847D29CF95CB003AD575 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987847C29CF95CB003AD575 /* Driver.swift */; };
 		A987848029CF97D6003AD575 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A987847F29CF97D6003AD575 /* FirebaseFirestoreSwift */; };
 		A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987848429CFA128003AD575 /* DriversListItemView.swift */; };
+		A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9944F2629E2094C00407954 /* CreateGroupButton.swift */; };
+		A9944F2929E209A600407954 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9944F2829E209A600407954 /* GroupList.swift */; };
 		A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9CD301629C74F96007D6C77 /* FirebaseAuth */; };
 		A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */; };
 		A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71729D1EA7100F76F74 /* RacesView.swift */; };
@@ -97,6 +99,8 @@
 		A987847929CF95A4003AD575 /* DriversService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversService.swift; sourceTree = "<group>"; };
 		A987847C29CF95CB003AD575 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		A987848429CFA128003AD575 /* DriversListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversListItemView.swift; sourceTree = "<group>"; };
+		A9944F2629E2094C00407954 /* CreateGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupButton.swift; sourceTree = "<group>"; };
+		A9944F2829E209A600407954 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A9E0C71729D1EA7100F76F74 /* RacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesView.swift; sourceTree = "<group>"; };
 		A9E0C71929D1EB4500F76F74 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 		A98433EE29D5D12D00252EF0 /* read-groups */ = {
 			isa = PBXGroup;
 			children = (
+				A9944F2529E2093C00407954 /* components */,
 				A98433F729D5D89D00252EF0 /* GroupsView.swift */,
 			);
 			path = "read-groups";
@@ -335,6 +340,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9944F2529E2093C00407954 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A9944F2629E2094C00407954 /* CreateGroupButton.swift */,
+				A9944F2829E209A600407954 /* GroupList.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		A9CD301829C750D0007D6C77 /* component */ = {
@@ -443,7 +457,9 @@
 				A98433FA29D5DB4900252EF0 /* BetGroupsService.swift in Sources */,
 				A95D966929E180AE00DAADEE /* AuthService.swift in Sources */,
 				A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */,
+				A9944F2929E209A600407954 /* GroupList.swift in Sources */,
 				A95D967029E1D63000DAADEE /* UserProfileViewModel.swift in Sources */,
+				A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
 				A95D966729E17F3200DAADEE /* AuthRepositoryImpl.swift in Sources */,

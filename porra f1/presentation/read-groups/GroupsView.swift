@@ -41,31 +41,24 @@ struct GroupsView: View {
                     } else if groups.isEmpty {
                         VStack {
                             Text("no-groups-found")
-                            Button {
-                                showCreateGroupSheet = true
-                            } label: {
-                                Text("create-group")
-                                    .bold()
-                            }
-                            .buttonStyle(.bordered)
-                            .controlSize(.large)
-                            .buttonBorderShape(.roundedRectangle(radius: 10))
+                            CreateGroupButton(showCreateGroupSheet: $showCreateGroupSheet)
                             
                             Spacer()
                         }
                         .padding()
                     } else {
-                        List($groups, id: \.id) { $group in
-                            NavigationLink(destination: GroupDetailsView(group: $group)) {
-                                Text(group.name)
-                                    .font(.system(size: 22, weight: .bold))
-                                    .padding(8)
-                            }
-                        }
+                        GroupList(groups: $groups)
                     }
                 }
             }
             .navigationTitle("groups-view")
+            .toolbar {
+                Button {
+                    self.showCreateGroupSheet = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
             .task {
                 await self.loadGroups()
             }
