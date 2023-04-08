@@ -1,14 +1,14 @@
 //
-//  DriversService.swift
-//  porra f1
+//  DriverRepositoryImpl.swift
+//  F1 League
 //
-//  Created by Alejandro Miranda on 25/3/23.
+//  Created by Alejandro Miranda on 8/4/23.
 //
 
 import Foundation
 import FirebaseFirestore
 
-class DriversService: ObservableObject {
+class DriverRepositoryImpl: DriverRepository {
     private let driversDb = Firestore.firestore()
     
     func getAllDrivers() async -> ([Driver], String) {
@@ -27,4 +27,5 @@ class DriversService: ObservableObject {
         }
         return (drivers, errorMessage)
     }
+    
 }

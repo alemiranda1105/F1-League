@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RacesView: View {
-    @ObservedObject private var racesService = RacesService()
+    private let racesService = RacesService()
     
     @State private var races = [Race]()
     @State private var error = ""

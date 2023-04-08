@@ -1,31 +1,31 @@
 //
-//  AppUserService.swift
-//  porra f1
+//  UserRepositoryImpl.swift
+//  F1 League
 //
-//  Created by Alejandro Miranda on 30/3/23.
+//  Created by Alejandro Miranda on 8/4/23.
 //
 
 import Foundation
 import FirebaseFirestore
 
-class AppUserService {
+class UserRepositoryImpl: UserRepository {
     private let appUserDb = Firestore.firestore()
     
     func getCurrentUser() async -> AppUser? {
         guard let userEmail = UserDefaults.standard.string(forKey: "userEmail") else {
             return nil
         }
-        let (user, _) = await self.getUserByEmail(_email: userEmail)
+        let (user, _) = await self.getUserByEmail(email: userEmail)
         return user
     }
     
-    func getUserByEmail(_email: String) async -> (AppUser?, String) {
+    func getUserByEmail(email: String) async -> (AppUser?, String) {
         var user: AppUser? = nil
         var errorMessage = ""
 
         let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue)
         do {
-            let snapshot = try await ref.whereField("email", isEqualTo: _email).getDocuments()
+            let snapshot = try await ref.whereField("email", isEqualTo: email).getDocuments()
             try snapshot.documents.forEach { document in
                 let userData =  try document.data(as: AppUser.self)
                 user = userData
@@ -34,7 +34,7 @@ class AppUserService {
                 throw "User not found"
             }
         } catch {
-            print(error.localizedDescription)
+            print(error)
             errorMessage = error.localizedDescription
         }
         return (user, errorMessage)
@@ -59,22 +59,22 @@ class AppUserService {
         return users
     }
     
-    
-    func createNewUser(_email: String) async -> (AppUser?, String) {
+    func saveUser(email: String) async -> (AppUser?, String) {
         var user: AppUser? = nil
         var errorMessage = ""
 
         let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue)
         do {
             let snapshot = try await ref.addDocument(data: [
-                "email": _email
+                "email": email
             ])
-            user = AppUser(id: snapshot.documentID ,email: _email)
+            user = AppUser(id: snapshot.documentID ,email: email)
         } catch {
             print(error.localizedDescription)
             errorMessage = error.localizedDescription
         }
         return (user, errorMessage)
     }
+    
     
 }

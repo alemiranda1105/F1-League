@@ -1,17 +1,17 @@
 //
-//  RacesService.swift
-//  porra f1
+//  RaceRepositoryImpl.swift
+//  F1 League
 //
-//  Created by Alejandro Miranda on 27/3/23.
+//  Created by Alejandro Miranda on 8/4/23.
 //
 
 import Foundation
 import FirebaseFirestore
 
-class RacesService: ObservableObject {
+class RaceRepositoryImpl: RaceRepository {
     private let racesDb = Firestore.firestore()
     
-    func getAllRaces() async -> ([Race], String) {
+    func getAllRaces() async -> (races: [Race], errorMessage: String) {
         var races = [Race]()
         var errorMessage = ""
         let ref = racesDb.collection(FirestoreDocuments.RACES.rawValue)
@@ -24,9 +24,8 @@ class RacesService: ObservableObject {
         } catch {
             errorMessage = error.localizedDescription
         }
-        if !races.isEmpty {
-            races = races.sorted { $0.round < $1.round }
-        }
         return (races, errorMessage)
     }
+    
+    
 }

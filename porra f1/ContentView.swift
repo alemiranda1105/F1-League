@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var authModel: AuthViewModel
+    @EnvironmentObject private var authViewModel: AuthViewModel
 
     var body: some View {
         Group {
-            if authModel.userIsSignedIn() {
+            if authViewModel.authUser != nil {
                 HomeView()
             } else {
                 WelcomeView()
@@ -20,7 +20,7 @@ struct ContentView: View {
         }
         .tint(Color("AccentColor"))
         .onAppear {
-            authModel.listenToAuthState()
+            authViewModel.listenToAuthState()
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DriversView: View {
-    @ObservedObject private var driversService = DriversService()
+    private let driversService = DriversService()
     
     @State private var drivers = [Driver]()
     @State private var error = ""
