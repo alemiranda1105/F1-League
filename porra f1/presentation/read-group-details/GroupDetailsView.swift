@@ -41,60 +41,7 @@ struct GroupDetailsView: View {
                 } else if !groupDetailsVm.error.isEmpty {
                     Text(groupDetailsVm.error)
                 } else {
-                    Form {
-                        if groupDetailsVm.currentRace != nil {
-                            Section {
-                                GroupRaceListItem(race: currentRace)
-                            } header: {
-                                Text("current-race-text")
-                            }
-                            .headerProminence(.increased)
-                        }
-                        
-                        Section {
-                            if showAllNextRaces {
-                                List($groupDetailsVm.nextRaces, id: \.id) { $race in
-                                    GroupRaceListItem(race: $race)
-                                }
-                            } else {
-                                GroupRaceListItem(race: $groupDetailsVm.nextRaces.first!)
-                            }
-                            Button {
-                                withAnimation {
-                                    showAllNextRaces.toggle()
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: showAllNextRaces ? "chevron.up" : "chevron.down")
-                                    Text(showAllNextRaces ? "hide-next-races-text" : "show-next-races-text")
-                                }
-                            }
-                        } header: {
-                            Text("next-races-text")
-                        }
-                        
-                        Section {
-                            if showAllPrevRaces {
-                                List($groupDetailsVm.prevRaces, id: \.id) { $race in
-                                    GroupRaceListItem(race: $race)
-                                }
-                            } else {
-                                GroupRaceListItem(race: $groupDetailsVm.prevRaces.first!)
-                            }
-                            Button {
-                                withAnimation {
-                                    showAllPrevRaces.toggle()
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: showAllPrevRaces ? "chevron.up" : "chevron.down")
-                                    Text(showAllPrevRaces ? "hide-prev-races-text" : "show-prev-races-text")
-                                }
-                            }
-                        } header: {
-                            Text("prev-races-text")
-                        }
-                    }
+                    GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
                 }
             }
             .navigationTitle(group.name)

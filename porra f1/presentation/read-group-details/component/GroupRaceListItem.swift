@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GroupRaceListItem: View {
-    @Environment(\.colorScheme) var colorScheme
     
     @Binding var race: Race
     
@@ -18,7 +17,6 @@ struct GroupRaceListItem: View {
                 Image("GP-\(race.round)")
                     .resizable()
                     .frame(width: 80, height: 80)
-                    .background(colorScheme == .dark ? Color.white : Color.black)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 VStack(alignment: .leading, spacing: 10) {
