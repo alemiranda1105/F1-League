@@ -12,4 +12,6 @@ protocol RaceRepository {
     
     func getAllRaces() async -> (races: [Race], errorMessage: String)
     
+    func getRaceByRound(round: Int) async -> (race: Race?, errorMessage: String)
+    
 }

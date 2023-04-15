@@ -12,7 +12,7 @@ struct GroupRaceListItem: View {
     @Binding var race: Race
     
     var body: some View {
-        NavigationLink(destination: {}) {
+        NavigationLink(destination: GroupRaceView(raceRound: race.round)) {
             HStack(spacing: 30) {
                 Image("GP-\(race.round)")
                     .resizable()
@@ -46,8 +46,7 @@ struct GroupRaceListItem_Previews: PreviewProvider {
             ),
             firstPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
             secondPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-            thirdPractice: RaceSession(date: "11-11-1111", time: "21:01Z"),
-            qualifying: RaceSession(date: "11-11-1111", time: "21:01Z"),
+            qualifying: RaceSession(date: "11-11-1111", time: "21:01Z"), thirdPractice: RaceSession(date: "11-11-1111", time: "21:01Z"), sprint: nil,
             raceName: "Test GP",
             time: "19;19;0Z",
             url: "",

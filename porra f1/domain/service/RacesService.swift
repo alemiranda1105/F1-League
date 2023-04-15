@@ -20,4 +20,8 @@ class RacesService {
         
         return (races, errorMessage)
     }
+    
+    func getRaceByRound(round: Int) async -> (race: Race?, errorMessage: String) {
+        return await racesRepository.getRaceByRound(round: round)
+    }
 }

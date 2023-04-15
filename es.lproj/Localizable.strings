@@ -61,3 +61,7 @@
 /* UserProfile */
 "sign-out" = "Cerrar sesión";
 "profile-view" = "Perfil";
+
+/* GroupRaceContentView */
+"view-less-text" = "Ver menos";
+"view-more-text" = "Ver más";

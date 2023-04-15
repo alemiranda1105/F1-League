@@ -11,7 +11,9 @@ import FirebaseFirestoreSwift
 struct Race: Codable {
     @DocumentID var id: String?
     let circuit: Circuit
-    let firstPractice, secondPractice, thirdPractice, qualifying: RaceSession?
+    let firstPractice, secondPractice, qualifying: RaceSession
+    let thirdPractice: RaceSession?
+    let sprint: RaceSession?
     let raceName, time, url, date: String
     let round, season: Int
     
@@ -21,8 +23,8 @@ struct Race: Codable {
     
     func getRaceDatetime() -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if let date = dateFormatter.date(from: date) {
+        dateFormatter.dateFormat = "yyyy-MM-dd (HH:mm:ssZ)"
+        if let date = dateFormatter.date(from: "\(date) (\(time))") {
             return date
         }
         return Date()
@@ -42,4 +44,13 @@ struct CircuitLocation: Codable {
 
 struct RaceSession: Codable {
     let date, time: String
+    
+    func getRaceSessionDatetime() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd (HH:mm:ssZ)"
+        if let date = dateFormatter.date(from: "\(date) (\(time))") {
+            return date
+        }
+        return Date()
+    }
 }

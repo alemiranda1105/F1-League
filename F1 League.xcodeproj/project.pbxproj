@@ -23,6 +23,8 @@
 		A951263229E2BFAD00761809 /* GroupRacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951263129E2BFAD00761809 /* GroupRacesView.swift */; };
 		A951263429E2C10600761809 /* ExpandableRacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951263329E2C10600761809 /* ExpandableRacesListView.swift */; };
 		A951263629E2C20E00761809 /* CurrentRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951263529E2C20E00761809 /* CurrentRaceView.swift */; };
+		A951263929E2C56E00761809 /* GroupRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951263829E2C56E00761809 /* GroupRaceView.swift */; };
+		A951263B29E2C65F00761809 /* GroupRaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951263A29E2C65F00761809 /* GroupRaceViewModel.swift */; };
 		A95D965429E1753800DAADEE /* RaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D965329E1753800DAADEE /* RaceRepository.swift */; };
 		A95D965829E175FF00DAADEE /* RaceRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D965729E175FF00DAADEE /* RaceRepositoryImpl.swift */; };
 		A95D965C29E1790C00DAADEE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D965B29E1790C00DAADEE /* UserRepository.swift */; };
@@ -58,6 +60,8 @@
 		A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71B29D1F62700F76F74 /* RacesService.swift */; };
 		A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */; };
 		A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */; };
+		A9EE36C129EAC8530049D29A /* GroupRaceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */; };
+		A9EE36C429EACC320049D29A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36C329EACC320049D29A /* DateUtils.swift */; };
 		A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF89A329CF901700E5A8F6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +84,8 @@
 		A951263129E2BFAD00761809 /* GroupRacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRacesView.swift; sourceTree = "<group>"; };
 		A951263329E2C10600761809 /* ExpandableRacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableRacesListView.swift; sourceTree = "<group>"; };
 		A951263529E2C20E00761809 /* CurrentRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRaceView.swift; sourceTree = "<group>"; };
+		A951263829E2C56E00761809 /* GroupRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceView.swift; sourceTree = "<group>"; };
+		A951263A29E2C65F00761809 /* GroupRaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceViewModel.swift; sourceTree = "<group>"; };
 		A95D965329E1753800DAADEE /* RaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRepository.swift; sourceTree = "<group>"; };
 		A95D965729E175FF00DAADEE /* RaceRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRepositoryImpl.swift; sourceTree = "<group>"; };
 		A95D965B29E1790C00DAADEE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 		A9E0C71B29D1F62700F76F74 /* RacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesService.swift; sourceTree = "<group>"; };
 		A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDocuments.swift; sourceTree = "<group>"; };
 		A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesListItemView.swift; sourceTree = "<group>"; };
+		A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceContentView.swift; sourceTree = "<group>"; };
+		A9EE36C329EACC320049D29A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		A9FF89A329CF901700E5A8F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +203,7 @@
 		A91489AF29BFC3DF005E6B6F /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				A9EE36C229EACC250049D29A /* utils */,
 				A95D965029E1749500DAADEE /* components */,
 				A98433F429D5D71000252EF0 /* extensions */,
 			);
@@ -210,6 +219,16 @@
 				A951263529E2C20E00761809 /* CurrentRaceView.swift */,
 			);
 			path = component;
+			sourceTree = "<group>";
+		};
+		A951263729E2C53F00761809 /* read-group-race */ = {
+			isa = PBXGroup;
+			children = (
+				A9EE36BF29EAC82B0049D29A /* components */,
+				A951263829E2C56E00761809 /* GroupRaceView.swift */,
+				A951263A29E2C65F00761809 /* GroupRaceViewModel.swift */,
+			);
+			path = "read-group-race";
 			sourceTree = "<group>";
 		};
 		A95D965029E1749500DAADEE /* components */ = {
@@ -277,6 +296,7 @@
 		A95D965A29E178C100DAADEE /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A951263729E2C53F00761809 /* read-group-race */,
 				A95D966C29E1D59E00DAADEE /* user-profile */,
 				A91489A829BFBD5C005E6B6F /* auth */,
 				A9FF89A229CF8FF400E5A8F6 /* read-drivers */,
@@ -375,6 +395,22 @@
 				A91489AD29BFBDE5005E6B6F /* RegisterView.swift */,
 			);
 			path = component;
+			sourceTree = "<group>";
+		};
+		A9EE36BF29EAC82B0049D29A /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		A9EE36C229EACC250049D29A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A9EE36C329EACC320049D29A /* DateUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		A9FF89A229CF8FF400E5A8F6 /* read-drivers */ = {
@@ -480,6 +516,7 @@
 				A9944F2929E209A600407954 /* GroupList.swift in Sources */,
 				A95D967029E1D63000DAADEE /* UserProfileViewModel.swift in Sources */,
 				A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */,
+				A951263929E2C56E00761809 /* GroupRaceView.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
 				A95D966729E17F3200DAADEE /* AuthRepositoryImpl.swift in Sources */,
@@ -487,6 +524,7 @@
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
 				A98433F829D5D89D00252EF0 /* GroupsView.swift in Sources */,
 				A95D965C29E1790C00DAADEE /* UserRepository.swift in Sources */,
+				A9EE36C129EAC8530049D29A /* GroupRaceContentView.swift in Sources */,
 				A987847D29CF95CB003AD575 /* Driver.swift in Sources */,
 				A98433F329D5D2AB00252EF0 /* AppUserService.swift in Sources */,
 				A95D966529E17EA900DAADEE /* AuthRepository.swift in Sources */,
@@ -501,9 +539,11 @@
 				A95D966329E17C5D00DAADEE /* DriverRepositoryImpl.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
 				A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */,
+				A9EE36C429EACC320049D29A /* DateUtils.swift in Sources */,
 				A90049E329DC307E00740F1D /* GroupDetailsView.swift in Sources */,
 				A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
+				A951263B29E2C65F00761809 /* GroupRaceViewModel.swift in Sources */,
 				A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */,
 				A98433ED29D5D0E200252EF0 /* AppUser.swift in Sources */,
 				A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */,

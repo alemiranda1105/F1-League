@@ -27,5 +27,22 @@ class RaceRepositoryImpl: RaceRepository {
         return (races, errorMessage)
     }
     
+    func getRaceByRound(round: Int) async -> (race: Race?, errorMessage: String) {
+        var race: Race? = nil
+        var errorMessage = ""
+        
+        let ref = racesDb.collection(FirestoreDocuments.RACES.rawValue).whereField("round", isEqualTo: round)
+        do {
+            let document = try await ref.getDocuments().documents.first
+            let raceData = try document?.data(as: Race.self)
+            race = raceData
+        } catch {
+            print(error)
+            errorMessage = error.localizedDescription
+        }
+        
+        return (race, errorMessage)
+    }
+    
     
 }
