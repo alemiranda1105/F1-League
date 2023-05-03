@@ -12,4 +12,5 @@ case DRIVERS = "drivers"
 case RACES = "races"
 case USERS = "users"
 case GROUPS = "groups"
+case RACE_BET = "race_bet"
 }

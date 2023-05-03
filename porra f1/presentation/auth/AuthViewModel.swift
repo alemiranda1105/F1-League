@@ -29,7 +29,7 @@ import FirebaseAuth
                     return
                 }
                 
-                self.appUser = AppUser(email: userData!.email, username: userData!.username)
+                self.appUser = AppUser(id: userData!.id, email: userData!.email, username: userData!.username)
                 UserDefaults.standard.set(self.appUser!.email, forKey: "userEmail")
             }
         }

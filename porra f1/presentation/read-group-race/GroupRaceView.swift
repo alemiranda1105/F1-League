@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GroupRaceView: View {
     @ObservedObject var groupRaceViewModel = GroupRaceViewModel()
-    
+
     let raceRound: Int
     
     var body: some View {
@@ -24,6 +24,15 @@ struct GroupRaceView: View {
                         } else {
                             VStack {
                                 GroupRaceContentView(race: self.groupRaceViewModel.race!)
+                                
+                                if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
+                                    NavigationLink(destination: CreateRaceBetView()) {
+                                        Text("create-bet")
+                                    }
+                                } else {
+                                    Text("You cannot create a bet after the Qualy")
+                                        .bold()
+                                }
                             }
                         }
                     }

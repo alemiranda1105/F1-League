@@ -11,4 +11,8 @@ import FirebaseFirestoreSwift
 struct Driver: Codable {
     @DocumentID var id: String?
     let code, dateOfBirth, driverId, familyName, givenName, nationality, permanentNumber, url: String
+    
+    func getRaceName() -> String {
+        return "\(permanentNumber) \(familyName), \(givenName)"
+    }
 }

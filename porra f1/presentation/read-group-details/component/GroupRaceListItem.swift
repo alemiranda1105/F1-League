@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GroupRaceListItem: View {
-    
     @Binding var race: Race
     
     var body: some View {
