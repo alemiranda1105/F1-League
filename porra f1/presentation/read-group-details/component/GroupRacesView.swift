@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct GroupRacesView: View {
-    @EnvironmentObject private var authViewModel: AuthViewModel
-    
+struct GroupRacesView: View {    
     @Binding var currentRace: Race
     @Binding var nextRaces: [Race]
     @Binding var prevRaces: [Race]

@@ -14,10 +14,8 @@ struct ContentView: View {
         Group {
             if authViewModel.appUser != nil {
                 HomeView()
-                    .environmentObject(authViewModel)
             } else {
                 WelcomeView()
-                    .environmentObject(authViewModel)
             }
         }
         .tint(Color("AccentColor"))
