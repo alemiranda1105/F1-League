@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GroupDetailsView: View {
     @ObservedObject var groupDetailsVm = GroupDetailsViewModel()
-    @StateObject var betGruoupStorage = BetGroupStorage()
     @Binding var group: BetGroup
     
     @State private var showAllNextRaces = false

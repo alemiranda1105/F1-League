@@ -10,7 +10,6 @@
 		A90049E329DC307E00740F1D /* GroupDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E229DC307E00740F1D /* GroupDetailsView.swift */; };
 		A90049E529DC31C500740F1D /* GroupDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */; };
 		A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90049E629DC5B0600740F1D /* GroupRaceListItem.swift */; };
-		A9130F652A098CF500DB647B /* BetGroupStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9130F642A098CF500DB647B /* BetGroupStorage.swift */; };
 		A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914899A29BFBC64005E6B6F /* porra_f1App.swift */; };
 		A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914899C29BFBC64005E6B6F /* ContentView.swift */; };
 		A914899F29BFBC65005E6B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914899E29BFBC65005E6B6F /* Assets.xcassets */; };
@@ -77,7 +76,6 @@
 		A90049E229DC307E00740F1D /* GroupDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsView.swift; sourceTree = "<group>"; };
 		A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewModel.swift; sourceTree = "<group>"; };
 		A90049E629DC5B0600740F1D /* GroupRaceListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceListItem.swift; sourceTree = "<group>"; };
-		A9130F642A098CF500DB647B /* BetGroupStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetGroupStorage.swift; sourceTree = "<group>"; };
 		A914899729BFBC64005E6B6F /* F1 League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "F1 League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A914899A29BFBC64005E6B6F /* porra_f1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = porra_f1App.swift; sourceTree = "<group>"; };
 		A914899C29BFBC64005E6B6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				A951263029E2BF3200761809 /* component */,
 				A90049E229DC307E00740F1D /* GroupDetailsView.swift */,
 				A90049E429DC31C500740F1D /* GroupDetailsViewModel.swift */,
-				A9130F642A098CF500DB647B /* BetGroupStorage.swift */,
 			);
 			path = "read-group-details";
 			sourceTree = "<group>";
@@ -567,7 +564,6 @@
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
 				A98433F829D5D89D00252EF0 /* GroupsView.swift in Sources */,
 				A95D965C29E1790C00DAADEE /* UserRepository.swift in Sources */,
-				A9130F652A098CF500DB647B /* BetGroupStorage.swift in Sources */,
 				A9EE36C129EAC8530049D29A /* GroupRaceContentView.swift in Sources */,
 				A987847D29CF95CB003AD575 /* Driver.swift in Sources */,
 				A98433F329D5D2AB00252EF0 /* AppUserService.swift in Sources */,
