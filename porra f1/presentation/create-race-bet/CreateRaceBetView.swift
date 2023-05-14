@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreateRaceBetView: View {
+    @EnvironmentObject var groupStorage: GroupStorage
+    @Binding var raceRound: Int
     
     private let DEFAULT_BET = "0"
     @ObservedObject private var createRaceBetViewModel = CreateRaceBetViewModel()
@@ -45,7 +47,7 @@ struct CreateRaceBetView: View {
                         Section {
                             Button {
                                 Task {
-                                    await createRaceBetViewModel.createBet(betGroup: "", raceRound: 1, userId: "", winner: winner, second: second, third: third)
+                                    await createRaceBetViewModel.createBet(betGroup: self.groupStorage.groupId, raceRound: self.raceRound, userId: self.groupStorage.userId, winner: winner, second: second, third: third)
                                 }
                             } label: {
                                 Text("create-bet-button")
@@ -71,6 +73,6 @@ struct CreateRaceBetView: View {
 
 struct CreateRaceBetView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateRaceBetView()
+        CreateRaceBetView(raceRound: .constant(1))
     }
 }

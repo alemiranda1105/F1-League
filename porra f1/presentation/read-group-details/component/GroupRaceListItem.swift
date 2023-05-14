@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
-
 struct GroupRaceListItem: View {
+    @State private var expandView = false
+    
     @Binding var race: Race
     
     var body: some View {
-        NavigationLink(destination: GroupRaceView(raceRound: race.round)) {
+        Button {
+            self.expandView.toggle()
+        } label: {
             HStack(spacing: 30) {
                 Image("GP-\(race.round)")
                     .resizable()
@@ -27,8 +30,10 @@ struct GroupRaceListItem: View {
                     
                     Text("\(race.date)")
                 }
-                
-            }
+            }.tint(.primary)
+        }
+        .sheet(isPresented: self.$expandView) {
+            GroupRaceView(raceRound: race.round)
         }
     }
 }

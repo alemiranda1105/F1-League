@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct BetGroup: Codable {
+struct BetGroup: Codable, Hashable {
     @DocumentID var id: String?
     let name: String
     let users: [String]

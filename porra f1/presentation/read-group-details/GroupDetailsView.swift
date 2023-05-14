@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GroupDetailsView: View {
-    @ObservedObject var groupDetailsVm = GroupDetailsViewModel()
+    @StateObject var groupDetailsVm = GroupDetailsViewModel()
     @Binding var group: BetGroup
     
     @State private var showAllNextRaces = false
@@ -32,26 +32,25 @@ struct GroupDetailsView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            Group {
-                if groupDetailsVm.pending {
-                    ProgressView() {
-                        Text("loading-text")
-                    }
-                } else if !groupDetailsVm.error.isEmpty {
-                    Text(groupDetailsVm.error)
-                } else {
-                    GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
+        VStack {
+            if groupDetailsVm.pending {
+                ProgressView() {
+                    Text("loading-text")
                 }
-            }
-            .navigationTitle(group.name)
-            .onAppear {
-                loadRaces()
-            }
-            .refreshable {
-                loadRaces()
+            } else if !groupDetailsVm.error.isEmpty {
+                Text(groupDetailsVm.error)
+            } else {
+                GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
             }
         }
+        .navigationTitle(group.name)
+        .onAppear {
+            loadRaces()
+        }
+        .refreshable {
+            loadRaces()
+        }
+        
     }
 }
 
