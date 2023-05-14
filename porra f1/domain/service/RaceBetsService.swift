@@ -14,7 +14,7 @@ class RaceBetsService {
         self.raceBetRepository = raceBetRepository
     }
     
-    func saveRaceBet(newRaceBet: RaceBet) async -> (RaceBet?, String) {
+    func saveRaceBet(newRaceBet: RaceBet) async -> (raceBet: RaceBet?, error: String) {
         return await self.raceBetRepository.saveRaceBet(newRaceBet: newRaceBet)
     }
 }

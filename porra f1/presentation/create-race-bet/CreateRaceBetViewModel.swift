@@ -14,7 +14,14 @@ import Foundation
     @Published var drivers = [Driver]()
     @Published var errorMessage = ""
     @Published var pending = true
-    @Published var submitted = true
+    @Published var submitted = false
+    
+    init(drivers: [Driver] = [Driver](), errorMessage: String = "", pending: Bool = true, submitted: Bool = false) {
+        self.drivers = drivers
+        self.errorMessage = errorMessage
+        self.pending = pending
+        self.submitted = submitted
+    }
     
     func loadDrivers() async {
         self.pending = true
@@ -25,17 +32,21 @@ import Foundation
     func createBet(betGroup: String, raceRound: Int, userId: String, winner: String, second: String, third: String) async {
         self.pending = true
         self.errorMessage = ""
-        let raceBet = RaceBet(betGroup: betGroup, raceRound: "\(raceRound)", userId: userId, driversSelection: DriverSelection(winner: winner, second: second, third: third))
-        if !raceBet.driversSelection.isValid() {
+        let raceBet = RaceBet(betGroup: betGroup, raceRound: raceRound, userId: userId, driversSelection: DriverSelection(winner: winner, second: second, third: third))
+        guard raceBet.driversSelection.isValid() else {
             self.errorMessage = "bet-not-valid"
             self.pending = false
             return
         }
+        
+        let creationResult = await self.raceBetsService.saveRaceBet(newRaceBet: raceBet)
+        guard creationResult.error.isEmpty else {
+            self.errorMessage = creationResult.error
+            self.pending = true
+            return
+        }
         self.pending = false
-    }
-    
-    private func validateBet(raceBet: RaceBet) -> Bool {
-        return raceBet.driversSelection.isValid()
+        self.submitted = true
     }
     
 }

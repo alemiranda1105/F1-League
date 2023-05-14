@@ -8,5 +8,5 @@
 import Foundation
 
 protocol RaceBetRepository {
-    func saveRaceBet(newRaceBet: RaceBet) async -> (RaceBet?, String)
+    func saveRaceBet(newRaceBet: RaceBet) async -> (raceBet: RaceBet?, error: String)
 }
