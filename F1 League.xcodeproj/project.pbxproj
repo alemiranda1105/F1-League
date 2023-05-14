@@ -22,6 +22,7 @@
 		A91489B829BFCB36005E6B6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A91489BA29BFCB36005E6B6F /* Localizable.strings */; };
 		A914C5302A0D20B70029C80B /* GroupStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914C52F2A0D20B70029C80B /* GroupStorage.swift */; };
 		A92875772A10EED60081BFFA /* CompletedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92875762A10EED60081BFFA /* CompletedIcon.swift */; };
+		A92875792A1119A10081BFFA /* CurrentBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92875782A1119A10081BFFA /* CurrentBetView.swift */; };
 		A9360C4529FAF8A3007194BD /* RaceBetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */; };
 		A9360C4729FAF8D1007194BD /* RaceBetImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */; };
 		A9360C4929FAFA0F007194BD /* RaceBetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4829FAFA0F007194BD /* RaceBetsService.swift */; };
@@ -92,6 +93,7 @@
 		A91489C029BFCB7D005E6B6F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A914C52F2A0D20B70029C80B /* GroupStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStorage.swift; sourceTree = "<group>"; };
 		A92875762A10EED60081BFFA /* CompletedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedIcon.swift; sourceTree = "<group>"; };
+		A92875782A1119A10081BFFA /* CurrentBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBetView.swift; sourceTree = "<group>"; };
 		A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetRepository.swift; sourceTree = "<group>"; };
 		A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetImpl.swift; sourceTree = "<group>"; };
 		A9360C4829FAFA0F007194BD /* RaceBetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetsService.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */,
+				A92875782A1119A10081BFFA /* CurrentBetView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				A9944F2929E209A600407954 /* GroupList.swift in Sources */,
 				A95D967029E1D63000DAADEE /* UserProfileViewModel.swift in Sources */,
 				A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */,
+				A92875792A1119A10081BFFA /* CurrentBetView.swift in Sources */,
 				A951263929E2C56E00761809 /* GroupRaceView.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A9360C4929FAFA0F007194BD /* RaceBetsService.swift in Sources */,

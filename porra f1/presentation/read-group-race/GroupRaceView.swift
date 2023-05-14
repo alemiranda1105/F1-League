@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GroupRaceView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var groupStorage: GroupStorage
     
     @StateObject var groupRaceViewModel = GroupRaceViewModel()
     
@@ -26,7 +27,9 @@ struct GroupRaceView: View {
                         VStack {
                             GroupRaceContentView(race: self.groupRaceViewModel.race!)
                             
-                            if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
+                            if groupRaceViewModel.userBet != nil {
+                                CurrentBetView(currentBet: groupRaceViewModel.userBet!)
+                            } else if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
                                 NavigationLink(destination: CreateRaceBetView(raceRound: .constant(raceRound))) {
                                     Text("create-bet")
                                 }
@@ -50,6 +53,7 @@ struct GroupRaceView: View {
         .onAppear {
             Task {
                 await groupRaceViewModel.readRaceDetails(round: raceRound)
+                await groupRaceViewModel.loadUserBet(userId: groupStorage.userId, groupId: groupStorage.groupId, raceRound: raceRound)
             }
         }
     }

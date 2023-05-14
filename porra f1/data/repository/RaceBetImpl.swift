@@ -15,7 +15,7 @@ class RaceBetImpl: RaceBetRepository {
     func saveRaceBet(newRaceBet: RaceBet) async -> (raceBet: RaceBet?, error: String) {
         var raceBet: RaceBet? = nil
         var errorMessage = ""
-
+        
         let ref = raceBetDb.collection(FirestoreDocuments.RACE_BET.rawValue)
         do {
             let snapshot = try ref.addDocument(from: newRaceBet)
@@ -26,4 +26,25 @@ class RaceBetImpl: RaceBetRepository {
         }
         return (raceBet, errorMessage)
     }
+    
+    func loadBetByRaceAndUser(userId: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String) {
+        var raceBet: RaceBet? = nil
+        var errorMessage = ""
+        
+        let ref = raceBetDb.collection(FirestoreDocuments.RACE_BET.rawValue)
+        do {
+            let snapshot = try await ref.whereField("userId", isEqualTo: userId)
+                .whereField("raceRound", isEqualTo: raceRound)
+                .whereField("betGroup", isEqualTo: groupId)
+                .getDocuments()
+            if let firstDocument = snapshot.documents.first {
+                raceBet = try firstDocument.data(as: RaceBet.self)
+            }
+        } catch {
+            print(error.localizedDescription)
+            errorMessage = error.localizedDescription
+        }
+        return (raceBet, errorMessage)
+    }
+    
 }
