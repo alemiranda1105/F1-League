@@ -15,6 +15,13 @@ struct GroupRaceView: View {
     
     let raceRound: Int
     
+    func loadPageContext() {
+        Task {
+            await groupRaceViewModel.readRaceDetails(round: raceRound)
+            await groupRaceViewModel.loadUserBet(userId: groupStorage.userId, groupId: groupStorage.groupId, raceRound: raceRound)
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -42,6 +49,12 @@ struct GroupRaceView: View {
                 }
                 
             }
+            .refreshable {
+                self.loadPageContext()
+            }
+            .onAppear {
+                self.loadPageContext()
+            }
             .navigationTitle(groupRaceViewModel.race?.getRaceName() ?? "")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -51,10 +64,7 @@ struct GroupRaceView: View {
             }
         }
         .onAppear {
-            Task {
-                await groupRaceViewModel.readRaceDetails(round: raceRound)
-                await groupRaceViewModel.loadUserBet(userId: groupStorage.userId, groupId: groupStorage.groupId, raceRound: raceRound)
-            }
+            self.loadPageContext()
         }
     }
 }

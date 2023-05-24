@@ -24,7 +24,10 @@ struct CurrentBetView: View {
                 }
                 .padding()
                 .background(Color("CardColor"))
-                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("SecondSilver"), lineWidth: 4)
+                )
                 
                 Spacer()
                 
@@ -36,7 +39,10 @@ struct CurrentBetView: View {
                 }
                 .padding()
                 .background(Color("CardColor"))
-                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("WinnerGold"), lineWidth: 4)
+                )
                 
                 Spacer()
                 
@@ -48,7 +54,10 @@ struct CurrentBetView: View {
                 }
                 .padding()
                 .background(Color("CardColor"))
-                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("ThirdBronze"), lineWidth: 4)
+                )
             }
         }
         .padding()
