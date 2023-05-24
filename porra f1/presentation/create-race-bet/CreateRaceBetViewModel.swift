@@ -32,7 +32,7 @@ import Foundation
     func createBet(betGroup: String, raceRound: Int, userId: String, winner: String, second: String, third: String) async {
         self.pending = true
         self.errorMessage = ""
-        let raceBet = RaceBet(betGroup: betGroup, raceRound: raceRound, userId: userId, driversSelection: DriverSelection(winner: winner, second: second, third: third))
+        let raceBet = RaceBet(betGroup: betGroup, raceRound: raceRound, userId: userId, driversSelection: RacePodium(winner: winner, second: second, third: third))
         guard raceBet.driversSelection.isValid() else {
             self.errorMessage = "bet-not-valid"
             self.pending = false

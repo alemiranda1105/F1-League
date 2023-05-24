@@ -72,5 +72,6 @@ struct GroupRaceView: View {
 struct GroupRaceView_Previews: PreviewProvider {
     static var previews: some View {
         GroupRaceView(raceRound: 1)
+            .environmentObject(GroupStorage(groupId: "", userId: ""))
     }
 }

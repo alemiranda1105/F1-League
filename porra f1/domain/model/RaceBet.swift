@@ -13,10 +13,10 @@ struct RaceBet: Codable {
     let betGroup: String
     let raceRound: Int
     let userId: String
-    let driversSelection: DriverSelection
+    let driversSelection: RacePodium
 }
 
-struct DriverSelection: Codable {
+struct RacePodium: Codable {
     let winner: String
     let second: String
     let third: String
