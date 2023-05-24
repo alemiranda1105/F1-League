@@ -83,6 +83,7 @@
 "clean-bet" = "Clean bet";
 "create-bet-button" = "Create bet";
 "create-bet-title" = "Create bet";
+"race-result-texts" = "Race result";
 
 /* Generic */
 "dismiss" = "Close";

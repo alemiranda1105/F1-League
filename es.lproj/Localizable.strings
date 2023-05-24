@@ -83,6 +83,7 @@
 "clean-bet" = "Limpiar apuesta";
 "create-bet-button" = "Crear apuesta";
 "create-bet-title" = "Crear apuesta";
+"race-result-texts" = "Resultado";
 
 /* Generic */
 "dismiss" = "Cerrar";
