@@ -59,6 +59,11 @@
 		A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A987848429CFA128003AD575 /* DriversListItemView.swift */; };
 		A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9944F2629E2094C00407954 /* CreateGroupButton.swift */; };
 		A9944F2929E209A600407954 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9944F2829E209A600407954 /* GroupList.swift */; };
+		A9A131D62A1E268800091AB7 /* RacePodium.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A131D52A1E268800091AB7 /* RacePodium.swift */; };
+		A9A131D82A1E26AD00091AB7 /* RaceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A131D72A1E26AD00091AB7 /* RaceResult.swift */; };
+		A9A131DA2A1E275400091AB7 /* RaceResultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A131D92A1E275400091AB7 /* RaceResultRepository.swift */; };
+		A9A131DC2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A131DB2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift */; };
+		A9A131DE2A1E2B4D00091AB7 /* RaceResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A131DD2A1E2B4D00091AB7 /* RaceResultView.swift */; };
 		A9CD301729C74F96007D6C77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9CD301629C74F96007D6C77 /* FirebaseAuth */; };
 		A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */; };
 		A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71729D1EA7100F76F74 /* RacesView.swift */; };
@@ -129,6 +134,11 @@
 		A987848429CFA128003AD575 /* DriversListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversListItemView.swift; sourceTree = "<group>"; };
 		A9944F2629E2094C00407954 /* CreateGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupButton.swift; sourceTree = "<group>"; };
 		A9944F2829E209A600407954 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
+		A9A131D52A1E268800091AB7 /* RacePodium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacePodium.swift; sourceTree = "<group>"; };
+		A9A131D72A1E26AD00091AB7 /* RaceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResult.swift; sourceTree = "<group>"; };
+		A9A131D92A1E275400091AB7 /* RaceResultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultRepository.swift; sourceTree = "<group>"; };
+		A9A131DB2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultRepositoryImpl.swift; sourceTree = "<group>"; };
+		A9A131DD2A1E2B4D00091AB7 /* RaceResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultView.swift; sourceTree = "<group>"; };
 		A9CD301A29C750EE007D6C77 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A9E0C71729D1EA7100F76F74 /* RacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesView.swift; sourceTree = "<group>"; };
 		A9E0C71929D1EB4500F76F74 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -280,6 +290,7 @@
 				A95D965B29E1790C00DAADEE /* UserRepository.swift */,
 				A95D966029E17C1800DAADEE /* DriverRepository.swift */,
 				A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */,
+				A9A131D92A1E275400091AB7 /* RaceResultRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				A95D966229E17C5D00DAADEE /* DriverRepositoryImpl.swift */,
 				A95D966629E17F3200DAADEE /* AuthRepositoryImpl.swift */,
 				A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */,
+				A9A131DB2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -314,6 +326,8 @@
 				A98433EC29D5D0E200252EF0 /* AppUser.swift */,
 				A984340129D6ECE500252EF0 /* NewGroupMember.swift */,
 				A9EE36C629EAD6600049D29A /* RaceBet.swift */,
+				A9A131D52A1E268800091AB7 /* RacePodium.swift */,
+				A9A131D72A1E26AD00091AB7 /* RaceResult.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -429,6 +443,7 @@
 			children = (
 				A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */,
 				A92875782A1119A10081BFFA /* CurrentBetView.swift */,
+				A9A131DD2A1E2B4D00091AB7 /* RaceResultView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -553,6 +568,7 @@
 				A98433F629D5D72600252EF0 /* Error+String.swift in Sources */,
 				A9EE36C929EAD7F00049D29A /* CreateRaceBetView.swift in Sources */,
 				A9360C4729FAF8D1007194BD /* RaceBetImpl.swift in Sources */,
+				A9A131DC2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift in Sources */,
 				A95D965E29E179D800DAADEE /* UserRepositoryImpl.swift in Sources */,
 				A95D965429E1753800DAADEE /* RaceRepository.swift in Sources */,
 				A98433F029D5D14100252EF0 /* BetGroup.swift in Sources */,
@@ -563,6 +579,7 @@
 				A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */,
 				A9944F2929E209A600407954 /* GroupList.swift in Sources */,
 				A95D967029E1D63000DAADEE /* UserProfileViewModel.swift in Sources */,
+				A9A131DA2A1E275400091AB7 /* RaceResultRepository.swift in Sources */,
 				A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */,
 				A92875792A1119A10081BFFA /* CurrentBetView.swift in Sources */,
 				A951263929E2C56E00761809 /* GroupRaceView.swift in Sources */,
@@ -579,6 +596,7 @@
 				A98433F329D5D2AB00252EF0 /* AppUserService.swift in Sources */,
 				A95D966529E17EA900DAADEE /* AuthRepository.swift in Sources */,
 				A987847A29CF95A4003AD575 /* DriversService.swift in Sources */,
+				A9A131D62A1E268800091AB7 /* RacePodium.swift in Sources */,
 				A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */,
 				A95D966129E17C1800DAADEE /* DriverRepository.swift in Sources */,
 				A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */,
@@ -603,11 +621,13 @@
 				A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */,
 				A9EE36C729EAD6600049D29A /* RaceBet.swift in Sources */,
 				A95D966E29E1D5B100DAADEE /* UserProfileView.swift in Sources */,
+				A9A131DE2A1E2B4D00091AB7 /* RaceResultView.swift in Sources */,
 				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
 				A98433FD29D6DD5200252EF0 /* CreateGroupView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,
 				A9EE36CB29EAD99F0049D29A /* CreateRaceBetViewModel.swift in Sources */,
 				A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */,
+				A9A131D82A1E26AD00091AB7 /* RaceResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

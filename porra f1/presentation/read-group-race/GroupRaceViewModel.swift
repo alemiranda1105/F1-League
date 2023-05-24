@@ -15,6 +15,7 @@ import Foundation
     @Published var error = ""
     @Published var loading = true
     @Published var userBet: RaceBet?
+    @Published var raceResult: RaceResult?
     
     
     func readRaceDetails(round: Int) async {
@@ -26,6 +27,12 @@ import Foundation
     func loadUserBet(userId: String, groupId: String, raceRound: Int) async {
         self.loading = true
         (self.userBet, self.error) = await raceBetsService.loadBetByRaceAndUser(userId: userId, groupId: groupId, raceRound: raceRound)
+        self.loading = false
+    }
+    
+    func loadRaceResults(raceRound: Int) async {
+        self.loading = true
+        (self.raceResult, self.error) = await raceService.loadRaceResults(round: raceRound)
         self.loading = false
     }
 }

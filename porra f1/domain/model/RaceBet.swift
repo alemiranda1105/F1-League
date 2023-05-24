@@ -15,16 +15,3 @@ struct RaceBet: Codable {
     let userId: String
     let driversSelection: RacePodium
 }
-
-struct RacePodium: Codable {
-    let winner: String
-    let second: String
-    let third: String
-    
-    func isValid() -> Bool {
-        let driverZero = "0"
-        let differentDrivers = winner != second && winner != third && second != third
-        let areNotZero = winner != driverZero || second != driverZero || third != driverZero
-        return differentDrivers && areNotZero
-    }
-}

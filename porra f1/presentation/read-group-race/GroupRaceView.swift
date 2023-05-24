@@ -18,6 +18,7 @@ struct GroupRaceView: View {
     func loadPageContext() {
         Task {
             await groupRaceViewModel.readRaceDetails(round: raceRound)
+            await groupRaceViewModel.loadRaceResults(raceRound: raceRound)
             await groupRaceViewModel.loadUserBet(userId: groupStorage.userId, groupId: groupStorage.groupId, raceRound: raceRound)
         }
     }
@@ -33,6 +34,10 @@ struct GroupRaceView: View {
                     } else {
                         VStack {
                             GroupRaceContentView(race: self.groupRaceViewModel.race!)
+                            
+                            if groupRaceViewModel.raceResult != nil {
+                                RaceResultView(raceResult: groupRaceViewModel.raceResult!)
+                            }
                             
                             if groupRaceViewModel.userBet != nil {
                                 CurrentBetView(currentBet: groupRaceViewModel.userBet!)
