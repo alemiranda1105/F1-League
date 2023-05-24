@@ -53,8 +53,8 @@
 "current-race-text" = "Carrera actual";
 "next-races-text" = "Siguientes carreras";
 "prev-races-text" = "Carreras anteriores";
-"hide-next-races-text" = "Ocultar siguientes carreras";
-"show-next-races-text" = "Mostrar siguientes carreras";
+"hide-next-races-text" = "Ocultar carreras siguientes";
+"show-next-races-text" = "Mostrar carreras siguientes";
 "hide-prev-races-text" = "Ocultar carreras anteriores";
 "show-prev-races-text" = "Mostrar carreras anteriores";
 
@@ -65,3 +65,28 @@
 /* GroupRaceContentView */
 "view-less-text" = "Ver menos";
 "view-more-text" = "Ver más";
+
+/* CurrentBetView */
+"Winner" = "Ganador";
+"Second" = "Segundo";
+"Third" = "Tercero";
+"your-bet-texts" = "Apuesta actual";
+
+/* GroupRaceView */
+"create-bet" = "Crear apuesta";
+"You cannot create a bet after the Qualy" = "No puedes añadir una apuesta después de la Qualy";
+
+/* CreateRaceBetView */
+"good-luck-text" = "¡Buena Suerte!";
+"close-bet-view" = "Cerrar";
+"select-drivers" = "Selecciona los pilotos";
+"clean-bet" = "Limpiar apuesta";
+"create-bet-button" = "Crear apuesta";
+"create-bet-title" = "Crear apuesta";
+
+/* Generic */
+"dismiss" = "Cerrar";
+"nothing-selected" = "Nada seleccionado";
+"winner" = "Ganador";
+"second" = "Segundo";
+"third" = "Tercero";

@@ -65,3 +65,28 @@
 /* GroupRaceContentView */
 "view-less-text" = "View less";
 "view-more-text" = "Show more";
+
+/* CurrentBetView */
+"Winner" = "Winner";
+"Second" = "Second";
+"Third" = "Third";
+"your-bet-texts" = "Current bet";
+
+/* GroupRaceView */
+"create-bet" = "Create bet";
+"You cannot create a bet after the Qualy" = "You cannot create a bet after the Qualy";
+
+/* CreateRaceBetView */
+"good-luck-text" = "Good luck!";
+"close-bet-view" = "Close";
+"select-drivers" = "Select the drivers";
+"clean-bet" = "Clean bet";
+"create-bet-button" = "Create bet";
+"create-bet-title" = "Create bet";
+
+/* Generic */
+"dismiss" = "Close";
+"nothing-selected" = "Nothing selected";
+"winner" = "Winner";
+"second" = "Second";
+"third" = "Third";
