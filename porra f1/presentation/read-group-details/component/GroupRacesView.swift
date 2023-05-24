@@ -19,9 +19,37 @@ struct GroupRacesView: View {
         Form {
             CurrentRaceView(currentRace: $currentRace)
             
-            ExpandableRacesListView(races: $nextRaces, headerText: "next-races-text")
+            Section {
+                ExpandableRacesListView(races: $nextRaces, headerText: "next-races-text", showAll: $showAllNextRaces)
+                Button {
+                    withAnimation {
+                        showAllNextRaces.toggle()
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: showAllNextRaces ? "chevron.up" : "chevron.down")
+                        Text(showAllNextRaces ? "hide-next-races-text" : "show-next-races-text")
+                    }
+                }
+            } header: {
+                Text("next-races-text")
+            }
             
-            ExpandableRacesListView(races: $prevRaces, headerText: "prev-races-text")
+            Section {
+                ExpandableRacesListView(races: $prevRaces, headerText: "prev-races-text", showAll: $showAllPrevRaces)
+                Button {
+                    withAnimation {
+                        showAllPrevRaces.toggle()
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: showAllPrevRaces ? "chevron.up" : "chevron.down")
+                        Text(showAllPrevRaces ? "hide-prev-races-text" : "show-prev-races-text")
+                    }
+                }
+            } header: {
+                Text("prev-races-text")
+            }
         }
     }
 }
