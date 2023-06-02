@@ -12,6 +12,6 @@ struct RaceBet: Codable {
     @DocumentID var id: String?
     let betGroup: String
     let raceRound: Int
-    let userId: String
+    let userEmail: String
     let driversSelection: RacePodium
 }

@@ -69,8 +69,8 @@ struct CurrentBetView: View {
 
 struct CurrentBetView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentBetView(currentBet: RaceBet(betGroup: "1", raceRound: 1, userId: "1", driversSelection: RacePodium(winner: "14", second: "1", third: "55")))
-        CurrentBetView(currentBet: RaceBet(betGroup: "1", raceRound: 1, userId: "1", driversSelection: RacePodium(winner: "14", second: "1", third: "55")))
+        CurrentBetView(currentBet: RaceBet(betGroup: "1", raceRound: 1, userEmail: "1", driversSelection: RacePodium(winner: "14", second: "1", third: "55")))
+        CurrentBetView(currentBet: RaceBet(betGroup: "1", raceRound: 1, userEmail: "1", driversSelection: RacePodium(winner: "14", second: "1", third: "55")))
             .preferredColorScheme(.dark)
     }
 }

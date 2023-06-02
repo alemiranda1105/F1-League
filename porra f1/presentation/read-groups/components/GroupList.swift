@@ -21,7 +21,7 @@ struct GroupList: View {
         }
         .navigationDestination(for: BetGroup.self) { group in
             GroupDetailsView(group: .constant(group))
-                .environmentObject(GroupStorage(groupId: group.id!, userId: (authStorage.appUser?.id)!))
+                .environmentObject(GroupStorage(groupId: group.id!, userId: (authStorage.appUser?.id)!, userEmail: (authStorage.appUser?.email)!))
         }
     }
 }

@@ -9,10 +9,12 @@ import Foundation
 
 class GroupStorage: ObservableObject {
     @Published var userId = ""
+    @Published var userEmail = ""
     @Published var groupId = ""
     
-    init(groupId: String, userId: String) {
+    init(groupId: String, userId: String, userEmail: String) {
         self.groupId = groupId
         self.userId = userId
+        self.userEmail = userEmail
     }
 }

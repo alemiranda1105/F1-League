@@ -70,7 +70,7 @@ struct CreateRaceBetView: View {
                             Section {
                                 Button {
                                     Task {
-                                        await createRaceBetViewModel.createBet(betGroup: self.groupStorage.groupId, raceRound: self.raceRound, userId: self.groupStorage.userId, winner: winner, second: second, third: third)
+                                        await createRaceBetViewModel.createBet(betGroup: self.groupStorage.groupId, raceRound: self.raceRound, userEmail: self.groupStorage.userEmail, winner: winner, second: second, third: third)
                                     }
                                 } label: {
                                     Text("create-bet-button")

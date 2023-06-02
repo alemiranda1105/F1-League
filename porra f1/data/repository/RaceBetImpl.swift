@@ -19,7 +19,7 @@ class RaceBetImpl: RaceBetRepository {
         let ref = raceBetDb.collection(FirestoreDocuments.RACE_BET.rawValue)
         do {
             let snapshot = try ref.addDocument(from: newRaceBet)
-            raceBet = RaceBet(id: snapshot.documentID, betGroup: newRaceBet.betGroup, raceRound: newRaceBet.raceRound, userId: newRaceBet.userId, driversSelection: newRaceBet.driversSelection)
+            raceBet = RaceBet(id: snapshot.documentID, betGroup: newRaceBet.betGroup, raceRound: newRaceBet.raceRound, userEmail: newRaceBet.userEmail, driversSelection: newRaceBet.driversSelection)
         } catch {
             print(error.localizedDescription)
             errorMessage = error.localizedDescription
