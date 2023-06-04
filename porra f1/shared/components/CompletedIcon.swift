@@ -29,7 +29,7 @@ struct CompletedIcon: View {
             .onAppear {
                 rotateCheckMark = 0
                 showCheckmark = 0
-                UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
             }
     }
 }

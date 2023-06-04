@@ -32,9 +32,9 @@ struct GroupRaceListItem: View {
                 }
             }.tint(.primary)
         }
-        .sheet(isPresented: self.$expandView) {
+        .fullScreenCover(isPresented: $expandView, content: {
             GroupRaceView(raceRound: race.round)
-        }
+        })
     }
 }
 

@@ -11,6 +11,7 @@ struct GroupDetailsView: View {
     @StateObject var groupDetailsVm = GroupDetailsViewModel()
     @Binding var group: BetGroup
     
+    @State private var page = 0
     @State private var showAllNextRaces = false
     @State private var showAllPrevRaces = false
     private var currentRace: Binding<Race> {
@@ -32,7 +33,7 @@ struct GroupDetailsView: View {
     }
     
     var body: some View {
-        VStack {
+        Group {
             if groupDetailsVm.pending {
                 ProgressView() {
                     Text("loading-text")
@@ -40,10 +41,20 @@ struct GroupDetailsView: View {
             } else if !groupDetailsVm.error.isEmpty {
                 Text(groupDetailsVm.error)
             } else {
-                GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
+                if (page == 0) {
+                    GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
+                } else {
+                    Text("Standings")
+                }
             }
         }
         .navigationTitle(group.name)
+        .toolbar {
+            Picker("", selection: $page.animation(.easeInOut(duration: 0.25))) {
+                Text("Races").tag(0)
+                Text("Standings").tag(1)
+            }
+        }
         .onAppear {
             loadRaces()
         }
