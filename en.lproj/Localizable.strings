@@ -57,6 +57,11 @@
 "show-next-races-text" = "Show next races";
 "hide-prev-races-text" = "Hide previous races";
 "show-prev-races-text" = "Show previous races";
+"Races" = "Races";
+"Standings" = "Standings";
+
+/* GroupStandingsView */
+"standings-title" = "Standings";
 
 /* UserProfile */
 "sign-out" = "Sign out";

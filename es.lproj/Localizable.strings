@@ -57,6 +57,11 @@
 "show-next-races-text" = "Mostrar carreras siguientes";
 "hide-prev-races-text" = "Ocultar carreras anteriores";
 "show-prev-races-text" = "Mostrar carreras anteriores";
+"Races" = "Carreras";
+"Standings" = "Clasificación";
+
+/* GroupStandingsView */
+"standings-title" = "Clasificación";
 
 /* UserProfile */
 "sign-out" = "Cerrar sesión";

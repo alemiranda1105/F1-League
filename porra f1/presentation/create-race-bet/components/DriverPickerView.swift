@@ -14,7 +14,7 @@ struct DriverPickerView: View {
     @Binding var position: String
     
     var body: some View {
-        Picker("\(positionLabel)", selection: $position) {
+        Picker(LocalizedStringKey(positionLabel), selection: $position) {
             Text("nothing-selected").tag("0")
             ForEach(drivers, id: \.permanentNumber) { driver in
                 Text(driver.getRaceName()).tag(driver.permanentNumber)

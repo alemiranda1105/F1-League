@@ -17,7 +17,7 @@
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "loadGroupStandings(groupId:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "8DE10388-9656-4D99-BB7E-7E211A1A2692 - 90da886509ac47c6"
@@ -110,7 +110,7 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "loadGroupStandings(groupId:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "F3F2B722-0A43-46ED-8FA9-853A1F17463A - b04a3fea7bf91be5"
