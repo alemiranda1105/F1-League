@@ -19,7 +19,7 @@ struct GroupRaceView: View {
         Task {
             await groupRaceViewModel.readRaceDetails(round: raceRound)
             await groupRaceViewModel.loadRaceResults(raceRound: raceRound)
-            await groupRaceViewModel.loadUserBet(userId: groupStorage.userId, groupId: groupStorage.groupId, raceRound: raceRound)
+            await groupRaceViewModel.loadUserBet(userEmal: groupStorage.userEmail, groupId: groupStorage.groupId, raceRound: raceRound)
         }
     }
     

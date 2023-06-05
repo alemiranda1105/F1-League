@@ -24,9 +24,9 @@ import Foundation
         self.loading = false
     }
     
-    func loadUserBet(userId: String, groupId: String, raceRound: Int) async {
+    func loadUserBet(userEmal: String, groupId: String, raceRound: Int) async {
         self.loading = true
-        (self.userBet, self.error) = await raceBetsService.loadBetByRaceAndUser(userId: userId, groupId: groupId, raceRound: raceRound)
+        (self.userBet, self.error) = await raceBetsService.loadBetByRaceAndUser(userEmail: userEmal, groupId: groupId, raceRound: raceRound)
         self.loading = false
     }
     

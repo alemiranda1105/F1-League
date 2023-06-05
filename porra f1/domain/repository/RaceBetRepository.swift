@@ -10,5 +10,5 @@ import Foundation
 protocol RaceBetRepository {
     func saveRaceBet(newRaceBet: RaceBet) async -> (raceBet: RaceBet?, error: String)
     
-    func loadBetByRaceAndUser(userId: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String)
+    func loadBetByRaceAndUser(userEmail: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String)
 }

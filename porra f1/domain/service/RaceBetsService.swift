@@ -18,7 +18,7 @@ class RaceBetsService {
         return await self.raceBetRepository.saveRaceBet(newRaceBet: newRaceBet)
     }
     
-    func loadBetByRaceAndUser(userId: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String) {
-        return await self.raceBetRepository.loadBetByRaceAndUser(userId: userId, groupId: groupId, raceRound: raceRound)
+    func loadBetByRaceAndUser(userEmail: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String) {
+        return await self.raceBetRepository.loadBetByRaceAndUser(userEmail: userEmail, groupId: groupId, raceRound: raceRound)
     }
 }

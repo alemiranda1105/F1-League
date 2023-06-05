@@ -27,13 +27,13 @@ class RaceBetImpl: RaceBetRepository {
         return (raceBet, errorMessage)
     }
     
-    func loadBetByRaceAndUser(userId: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String) {
+    func loadBetByRaceAndUser(userEmail: String, groupId: String, raceRound: Int) async -> (userBet: RaceBet?, error: String) {
         var raceBet: RaceBet? = nil
         var errorMessage = ""
         
         let ref = raceBetDb.collection(FirestoreDocuments.RACE_BET.rawValue)
         do {
-            let snapshot = try await ref.whereField("userId", isEqualTo: userId)
+            let snapshot = try await ref.whereField("userEmail", isEqualTo: userEmail)
                 .whereField("raceRound", isEqualTo: raceRound)
                 .whereField("betGroup", isEqualTo: groupId)
                 .getDocuments()
