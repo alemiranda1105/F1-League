@@ -77,6 +77,13 @@
 		A9EE36C929EAD7F00049D29A /* CreateRaceBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36C829EAD7F00049D29A /* CreateRaceBetView.swift */; };
 		A9EE36CB29EAD99F0049D29A /* CreateRaceBetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36CA29EAD99F0049D29A /* CreateRaceBetViewModel.swift */; };
 		A9EE36CE29EADC250049D29A /* DriverPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36CD29EADC250049D29A /* DriverPickerView.swift */; };
+		A9F011092A2CA24E00FE262C /* GroupStandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F011082A2CA24E00FE262C /* GroupStandingsView.swift */; };
+		A9F0110B2A2CA28D00FE262C /* GroupStandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0110A2A2CA28D00FE262C /* GroupStandingsViewModel.swift */; };
+		A9F0110D2A2CA2CB00FE262C /* GroupStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0110C2A2CA2CB00FE262C /* GroupStandings.swift */; };
+		A9F0110F2A2CA36200FE262C /* GroupStandingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F0110E2A2CA36200FE262C /* GroupStandingsRepository.swift */; };
+		A9F011112A2CA3CC00FE262C /* GroupStandingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F011102A2CA3CC00FE262C /* GroupStandingsService.swift */; };
+		A9F011132A2CA46200FE262C /* GroupStandingsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F011122A2CA46200FE262C /* GroupStandingsRepositoryImpl.swift */; };
+		A9F011162A2CAA1400FE262C /* GroupStandingsPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F011152A2CAA1400FE262C /* GroupStandingsPositionView.swift */; };
 		A9FF89A429CF901700E5A8F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF89A329CF901700E5A8F6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +158,13 @@
 		A9EE36C829EAD7F00049D29A /* CreateRaceBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaceBetView.swift; sourceTree = "<group>"; };
 		A9EE36CA29EAD99F0049D29A /* CreateRaceBetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRaceBetViewModel.swift; sourceTree = "<group>"; };
 		A9EE36CD29EADC250049D29A /* DriverPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverPickerView.swift; sourceTree = "<group>"; };
+		A9F011082A2CA24E00FE262C /* GroupStandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsView.swift; sourceTree = "<group>"; };
+		A9F0110A2A2CA28D00FE262C /* GroupStandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsViewModel.swift; sourceTree = "<group>"; };
+		A9F0110C2A2CA2CB00FE262C /* GroupStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandings.swift; sourceTree = "<group>"; };
+		A9F0110E2A2CA36200FE262C /* GroupStandingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsRepository.swift; sourceTree = "<group>"; };
+		A9F011102A2CA3CC00FE262C /* GroupStandingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsService.swift; sourceTree = "<group>"; };
+		A9F011122A2CA46200FE262C /* GroupStandingsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsRepositoryImpl.swift; sourceTree = "<group>"; };
+		A9F011152A2CAA1400FE262C /* GroupStandingsPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStandingsPositionView.swift; sourceTree = "<group>"; };
 		A9FF89A329CF901700E5A8F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,6 +305,7 @@
 				A95D966029E17C1800DAADEE /* DriverRepository.swift */,
 				A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */,
 				A9A131D92A1E275400091AB7 /* RaceResultRepository.swift */,
+				A9F0110E2A2CA36200FE262C /* GroupStandingsRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -313,6 +328,7 @@
 				A95D966629E17F3200DAADEE /* AuthRepositoryImpl.swift */,
 				A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */,
 				A9A131DB2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift */,
+				A9F011122A2CA46200FE262C /* GroupStandingsRepositoryImpl.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -328,6 +344,7 @@
 				A9EE36C629EAD6600049D29A /* RaceBet.swift */,
 				A9A131D52A1E268800091AB7 /* RacePodium.swift */,
 				A9A131D72A1E26AD00091AB7 /* RaceResult.swift */,
+				A9F0110C2A2CA2CB00FE262C /* GroupStandings.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -335,6 +352,7 @@
 		A95D965A29E178C100DAADEE /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A9F011072A2CA23500FE262C /* read-group-standings */,
 				A9EE36C529EAD6230049D29A /* create-race-bet */,
 				A951263729E2C53F00761809 /* read-group-race */,
 				A95D966C29E1D59E00DAADEE /* user-profile */,
@@ -358,6 +376,7 @@
 				A98433F229D5D2AB00252EF0 /* AppUserService.swift */,
 				A95D966829E180AE00DAADEE /* AuthService.swift */,
 				A9360C4829FAFA0F007194BD /* RaceBetsService.swift */,
+				A9F011102A2CA3CC00FE262C /* GroupStandingsService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -474,6 +493,24 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		A9F011072A2CA23500FE262C /* read-group-standings */ = {
+			isa = PBXGroup;
+			children = (
+				A9F011142A2CA9F800FE262C /* components */,
+				A9F011082A2CA24E00FE262C /* GroupStandingsView.swift */,
+				A9F0110A2A2CA28D00FE262C /* GroupStandingsViewModel.swift */,
+			);
+			path = "read-group-standings";
+			sourceTree = "<group>";
+		};
+		A9F011142A2CA9F800FE262C /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A9F011152A2CAA1400FE262C /* GroupStandingsPositionView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		A9FF89A229CF8FF400E5A8F6 /* read-drivers */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +608,7 @@
 				A9A131DC2A1E279E00091AB7 /* RaceResultRepositoryImpl.swift in Sources */,
 				A95D965E29E179D800DAADEE /* UserRepositoryImpl.swift in Sources */,
 				A95D965429E1753800DAADEE /* RaceRepository.swift in Sources */,
+				A9F011092A2CA24E00FE262C /* GroupStandingsView.swift in Sources */,
 				A98433F029D5D14100252EF0 /* BetGroup.swift in Sources */,
 				A98433FA29D5DB4900252EF0 /* BetGroupsService.swift in Sources */,
 				A951263629E2C20E00761809 /* CurrentRaceView.swift in Sources */,
@@ -581,11 +619,14 @@
 				A95D967029E1D63000DAADEE /* UserProfileViewModel.swift in Sources */,
 				A9A131DA2A1E275400091AB7 /* RaceResultRepository.swift in Sources */,
 				A9944F2729E2094C00407954 /* CreateGroupButton.swift in Sources */,
+				A9F0110D2A2CA2CB00FE262C /* GroupStandings.swift in Sources */,
+				A9F0110B2A2CA28D00FE262C /* GroupStandingsViewModel.swift in Sources */,
 				A92875792A1119A10081BFFA /* CurrentBetView.swift in Sources */,
 				A951263929E2C56E00761809 /* GroupRaceView.swift in Sources */,
 				A91489B129BFC3F0005E6B6F /* SecureInputView.swift in Sources */,
 				A9360C4929FAFA0F007194BD /* RaceBetsService.swift in Sources */,
 				A914899D29BFBC64005E6B6F /* ContentView.swift in Sources */,
+				A9F011132A2CA46200FE262C /* GroupStandingsRepositoryImpl.swift in Sources */,
 				A95D966729E17F3200DAADEE /* AuthRepositoryImpl.swift in Sources */,
 				A984340229D6ECE500252EF0 /* NewGroupMember.swift in Sources */,
 				A91489AE29BFBDE5005E6B6F /* RegisterView.swift in Sources */,
@@ -603,7 +644,9 @@
 				A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */,
 				A92875772A10EED60081BFFA /* CompletedIcon.swift in Sources */,
 				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
+				A9F011112A2CA3CC00FE262C /* GroupStandingsService.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
+				A9F011162A2CAA1400FE262C /* GroupStandingsPositionView.swift in Sources */,
 				A90049E529DC31C500740F1D /* GroupDetailsViewModel.swift in Sources */,
 				A95D966329E17C5D00DAADEE /* DriverRepositoryImpl.swift in Sources */,
 				A9CD301B29C750EE007D6C77 /* AuthViewModel.swift in Sources */,
@@ -611,6 +654,7 @@
 				A9EE36CE29EADC250049D29A /* DriverPickerView.swift in Sources */,
 				A9EE36C429EACC320049D29A /* DateUtils.swift in Sources */,
 				A90049E329DC307E00740F1D /* GroupDetailsView.swift in Sources */,
+				A9F0110F2A2CA36200FE262C /* GroupStandingsRepository.swift in Sources */,
 				A9E0C71829D1EA7100F76F74 /* RacesView.swift in Sources */,
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
 				A914C5302A0D20B70029C80B /* GroupStorage.swift in Sources */,

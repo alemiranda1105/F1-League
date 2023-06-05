@@ -14,4 +14,5 @@ enum FirestoreDocuments: String {
     case GROUPS = "groups"
     case RACE_BET = "race_bet"
     case RACE_RESULTS = "race_results"
+    case GROUP_STANDINGS = "group_standings"
 }
