@@ -35,6 +35,20 @@ class AuthRepositoryImpl: AuthRepository {
         }
     }
     
+    func updateAuthUser(newUser: AppUser, password: String) async -> (User?, String) {
+        do {
+            if let authUser = Auth.auth().currentUser {
+                try await Auth.auth().signIn(withEmail: authUser.email!, password: password)
+                try await authUser.updateEmail(to: newUser.email)
+                return (authUser, "")
+            }
+            return (nil, "no-current-user-error")
+        } catch {
+            print(error.localizedDescription)
+            return (nil, error.localizedDescription)
+        }
+    }
+    
     func signOut() {
         do {
             try auth.signOut()

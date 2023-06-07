@@ -8,7 +8,11 @@
 import Foundation
 
 class AppUserService {
-    private let appUserRepository = UserRepositoryImpl()
+    private let appUserRepository: UserRepository
+    
+    init (appUserRepository: UserRepository = UserRepositoryImpl()) {
+        self.appUserRepository = UserRepositoryImpl()
+    }
     
     func getCurrentUser() async -> AppUser? {
         return await appUserRepository.getCurrentUser()
@@ -28,6 +32,10 @@ class AppUserService {
     
     func createNewUser(newUser: AppUser) async -> (AppUser?, String) {
         return await appUserRepository.saveUser(newUser: newUser)
+    }
+    
+    func updateUser(user: AppUser) async -> (updatedUser: AppUser?, error: String) {
+        return await appUserRepository.updateUser(user: user)
     }
     
 }

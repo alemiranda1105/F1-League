@@ -9,17 +9,60 @@ import SwiftUI
 
 struct UserProfileView: View {
     @ObservedObject var userProfileViewModel = UserProfileViewModel()
+    @State private var showEditView = false
+    @State private var showUpdatePasswordButton = false
     
     var body: some View {
-        ScrollView {
-            VStack {
-                Button {
-                    userProfileViewModel.signOut()
-                } label: {
-                    Text("sign-out")
+        NavigationStack {
+            Form {
+                if userProfileViewModel.pending {
+                    ProgressView("loading-text")
+                }
+                if userProfileViewModel.user != nil {
+                    Section(header: Text("user-information")) {
+                        Text(self.userProfileViewModel.user!.username)
+                            .bold()
+                        Text(self.userProfileViewModel.user!.email)
+                            .bold()
+                        /// TODO: Groups and bets use user email and not ID
+                        // Button("edit-user-information") {
+                        //     showEditView = true
+                        // }
+                        Button("update-password-button") {
+                            showUpdatePasswordButton = true
+                        }
+                    }
+                    
+                    Section {
+                        Button {
+                            userProfileViewModel.signOut()
+                        } label: {
+                            Text("sign-out")
+                        }
+                    }
                 }
             }
             .navigationTitle("profile-view")
+        }
+        .onAppear {
+            Task {
+                await self.userProfileViewModel.loadUser()
+            }
+        }
+        .refreshable {
+            Task {
+                await self.userProfileViewModel.loadUser()
+            }
+        }
+        .sheet(isPresented: $showUpdatePasswordButton) {
+            Text("password")
+        }
+        .sheet(isPresented: $showEditView) {
+            if let currentUser = Binding($userProfileViewModel.user) {
+                EditUserView(currentUser: currentUser)
+            } else {
+                Text("no-user-found")
+            }
         }
     }
 }

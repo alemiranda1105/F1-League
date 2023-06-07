@@ -23,6 +23,9 @@
 		A914C5302A0D20B70029C80B /* GroupStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914C52F2A0D20B70029C80B /* GroupStorage.swift */; };
 		A92875772A10EED60081BFFA /* CompletedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92875762A10EED60081BFFA /* CompletedIcon.swift */; };
 		A92875792A1119A10081BFFA /* CurrentBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92875782A1119A10081BFFA /* CurrentBetView.swift */; };
+		A93202F42A2FC2EE008A95F6 /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93202F32A2FC2EE008A95F6 /* EditUserView.swift */; };
+		A93202F72A2FC30F008A95F6 /* EditUserPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93202F62A2FC30F008A95F6 /* EditUserPasswordView.swift */; };
+		A93202F92A2FC547008A95F6 /* EditUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93202F82A2FC547008A95F6 /* EditUserViewModel.swift */; };
 		A9360C4529FAF8A3007194BD /* RaceBetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */; };
 		A9360C4729FAF8D1007194BD /* RaceBetImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */; };
 		A9360C4929FAFA0F007194BD /* RaceBetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9360C4829FAFA0F007194BD /* RaceBetsService.swift */; };
@@ -106,6 +109,9 @@
 		A914C52F2A0D20B70029C80B /* GroupStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupStorage.swift; sourceTree = "<group>"; };
 		A92875762A10EED60081BFFA /* CompletedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedIcon.swift; sourceTree = "<group>"; };
 		A92875782A1119A10081BFFA /* CurrentBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBetView.swift; sourceTree = "<group>"; };
+		A93202F32A2FC2EE008A95F6 /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		A93202F62A2FC30F008A95F6 /* EditUserPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserPasswordView.swift; sourceTree = "<group>"; };
+		A93202F82A2FC547008A95F6 /* EditUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewModel.swift; sourceTree = "<group>"; };
 		A9360C4429FAF8A3007194BD /* RaceBetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetRepository.swift; sourceTree = "<group>"; };
 		A9360C4629FAF8D1007194BD /* RaceBetImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetImpl.swift; sourceTree = "<group>"; };
 		A9360C4829FAFA0F007194BD /* RaceBetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceBetsService.swift; sourceTree = "<group>"; };
@@ -255,6 +261,16 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
+		A93202F52A2FC2F4008A95F6 /* edit-user-information */ = {
+			isa = PBXGroup;
+			children = (
+				A93202F32A2FC2EE008A95F6 /* EditUserView.swift */,
+				A93202F62A2FC30F008A95F6 /* EditUserPasswordView.swift */,
+				A93202F82A2FC547008A95F6 /* EditUserViewModel.swift */,
+			);
+			path = "edit-user-information";
+			sourceTree = "<group>";
+		};
 		A951263029E2BF3200761809 /* component */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +368,7 @@
 		A95D965A29E178C100DAADEE /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A93202F52A2FC2F4008A95F6 /* edit-user-information */,
 				A9F011072A2CA23500FE262C /* read-group-standings */,
 				A9EE36C529EAD6230049D29A /* create-race-bet */,
 				A951263729E2C53F00761809 /* read-group-race */,
@@ -645,6 +662,7 @@
 				A92875772A10EED60081BFFA /* CompletedIcon.swift in Sources */,
 				A987847729CF94AB003AD575 /* DriversView.swift in Sources */,
 				A9F011112A2CA3CC00FE262C /* GroupStandingsService.swift in Sources */,
+				A93202F42A2FC2EE008A95F6 /* EditUserView.swift in Sources */,
 				A91489AA29BFBD6F005E6B6F /* WelcomeView.swift in Sources */,
 				A9F011162A2CAA1400FE262C /* GroupStandingsPositionView.swift in Sources */,
 				A90049E529DC31C500740F1D /* GroupDetailsViewModel.swift in Sources */,
@@ -659,6 +677,7 @@
 				A91489B329BFC514005E6B6F /* LoginInputModifier.swift in Sources */,
 				A914C5302A0D20B70029C80B /* GroupStorage.swift in Sources */,
 				A951263B29E2C65F00761809 /* GroupRaceViewModel.swift in Sources */,
+				A93202F72A2FC30F008A95F6 /* EditUserPasswordView.swift in Sources */,
 				A9360C4529FAF8A3007194BD /* RaceBetRepository.swift in Sources */,
 				A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */,
 				A98433ED29D5D0E200252EF0 /* AppUser.swift in Sources */,
@@ -669,6 +688,7 @@
 				A987848529CFA128003AD575 /* DriversListItemView.swift in Sources */,
 				A98433FD29D6DD5200252EF0 /* CreateGroupView.swift in Sources */,
 				A91489AC29BFBDDA005E6B6F /* LoginView.swift in Sources */,
+				A93202F92A2FC547008A95F6 /* EditUserViewModel.swift in Sources */,
 				A9EE36CB29EAD99F0049D29A /* CreateRaceBetViewModel.swift in Sources */,
 				A914899B29BFBC64005E6B6F /* porra_f1App.swift in Sources */,
 				A9A131D82A1E26AD00091AB7 /* RaceResult.swift in Sources */,

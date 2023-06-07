@@ -28,6 +28,10 @@ class AuthService {
         return authRepository.currentUser
     }
     
+    func updateAuthUser(newUser: AppUser, password: String) async -> (User?, String) {
+        return await authRepository.updateAuthUser(newUser: newUser, password: password)
+    }
+    
     func signOut() {
         authRepository.signOut()
     }

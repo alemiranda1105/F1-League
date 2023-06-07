@@ -19,4 +19,6 @@ protocol UserRepository {
     
     func saveUser(newUser: AppUser) async -> (AppUser?, String)
     
+    func updateUser(user: AppUser) async -> (updatedUser: AppUser?, error: String)
+    
 }

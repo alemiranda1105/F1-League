@@ -16,5 +16,7 @@ protocol AuthRepository {
     
     func signInWithEmailAndPassword(email: String, password: String) async -> (User?, String)
     
+    func updateAuthUser(newUser: AppUser, password: String) async -> (User?, String)
+    
     func signOut()
 }
