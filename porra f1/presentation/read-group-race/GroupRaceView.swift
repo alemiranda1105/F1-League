@@ -44,7 +44,13 @@ struct GroupRaceView: View {
                             } else if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
                                 NavigationLink(destination: CreateRaceBetView(raceRound: .constant(raceRound))) {
                                     Text("create-bet")
+                                        .frame(maxWidth: .infinity)
+                                        .bold()
+                                        .padding()
                                 }
+                                .buttonStyle(.bordered)
+                                .cornerRadius(10)
+                                .padding()
                             } else {
                                 Text("You cannot create a bet after the Qualy")
                                     .bold()
@@ -78,7 +84,7 @@ struct GroupRaceView: View {
 
 struct GroupRaceView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupRaceView(raceRound: 1)
+        GroupRaceView(raceRound: 12)
             .environmentObject(GroupStorage(groupId: "", userId: "", userEmail: ""))
     }
 }
