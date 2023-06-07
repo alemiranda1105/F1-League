@@ -16,7 +16,7 @@ struct CreateGroupView: View {
     private let betGroupService = BetGroupsService()
     
     @State private var groupName = ""
-    @State private var selectedUsers = [NewGroupMember]()
+    @State var selectedUsers = [NewGroupMember]()
     @State private var error: String?
     
     private func createGroup() {
@@ -38,34 +38,31 @@ struct CreateGroupView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment:  .leading, spacing: 30) {
-                VStack(alignment: .leading) {
-                    Text("group-name-label")
-                        .bold()
+            Form {
+                Section {
                     TextField("group-name-field", text: $groupName)
-                        .modifier(LoginInputModifier())
+                } header: {
+                    Text("group-name-label")
                 }
                 
                 
-                VStack(alignment: .leading) {
-                    Text("member-list")
-                        .bold()
+                Section {
                     NavigationLink {
                         AddGroupMemberView(selectedUsers: $selectedUsers)
                     } label: {
                         Text("add-member-view")
                             .fontWeight(.light)
+                            .foregroundColor(Color.accentColor)
                     }
-                }
-                ScrollView {
-                    LazyVStack {
+                    List {
                         ForEach(selectedUsers, id: \.email) { member in
                             Text(member.email)
                         }
                     }
+                } header: {
+                    Text("member-list")
                 }
                 
-                Spacer()
                 
                 Button {
                     createGroup()
@@ -73,13 +70,11 @@ struct CreateGroupView: View {
                     Text("create-group-button")
                         .frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .buttonBorderShape(.roundedRectangle(radius: 10))
                 .disabled(disableSubmitButton())
                 
             }
-            .padding()
             .navigationTitle("create-group")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -98,5 +93,6 @@ struct CreateGroupView: View {
 struct CreateGroupView_Previews: PreviewProvider {
     static var previews: some View {
         CreateGroupView(isSheet: false, showView: .constant(true))
+        CreateGroupView(isSheet: false, showView: .constant(true), selectedUsers: [NewGroupMember(email: "test1@gmail.com"), NewGroupMember(email: "test2@gmail.com")])
     }
 }

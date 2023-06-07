@@ -38,7 +38,7 @@
 "create-group" = "Crear grupo";
 
 /* CreateGroupView */
-"group-name-label" = "Nombre del group";
+"group-name-label" = "Nombre del grupo";
 "create-group-button" = "Crear grupo";
 "cancel-button" = "Cancelar";
 "group-name-field" = "Nombre";
