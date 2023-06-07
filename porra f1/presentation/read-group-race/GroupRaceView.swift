@@ -63,8 +63,10 @@ struct GroupRaceView: View {
             .navigationTitle(groupRaceViewModel.race?.getRaceName() ?? "")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button("dismiss") {
-                    dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("dismiss") {
+                        dismiss()
+                    }
                 }
             }
         }

@@ -50,9 +50,11 @@ struct GroupDetailsView: View {
         }
         .navigationTitle(group.name)
         .toolbar {
-            Picker("", selection: $page.animation(.spring(response: 0.285, dampingFraction: 0.825))) {
-                Text("Races").tag(0)
-                Text("Standings").tag(1)
+            ToolbarItem(placement: .primaryAction) {
+                Picker("", selection: $page.animation(.spring(response: 0.285, dampingFraction: 0.825))) {
+                    Text("Races").tag(0)
+                    Text("Standings").tag(1)
+                }
             }
         }
         .onAppear {
