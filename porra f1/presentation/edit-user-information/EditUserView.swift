@@ -21,21 +21,21 @@ struct EditUserView: View {
             Section(header: Text("username")) {
                 Text(currentUser.username)
                     .bold()
-                TextField("New username", text: $username)
+                TextField("new-username", text: $username)
                     .textInputAutocapitalization(.never)
             }
             
             Section(header: Text("email")) {
                 Text(currentUser.email)
                     .bold()
-                TextField("New email", text: $email)
+                TextField("new-email", text: $email)
                     .keyboardType(.emailAddress)
                     .textInputAutocapitalization(.never)
             }
             
             Section {
                 SecureInputView("password", text: $password)
-                Button("Submit") {
+                Button("submit") {
                     Task {
                         let newUsername = username.isEmpty ? currentUser.username : username
                         let newEmail = email.isEmpty ? currentUser.email : email

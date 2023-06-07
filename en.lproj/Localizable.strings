@@ -66,6 +66,12 @@
 /* UserProfile */
 "sign-out" = "Sign out";
 "profile-view" = "Profile";
+"edit-user-information" = "Update information";
+"update-password-button" = "Update password";
+
+/* UpdatePasswordView */
+"new-password" = "New password";
+"old-password" = "Old password";
 
 /* GroupRaceContentView */
 "view-less-text" = "View less";

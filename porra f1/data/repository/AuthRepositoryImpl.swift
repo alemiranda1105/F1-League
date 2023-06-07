@@ -49,6 +49,21 @@ class AuthRepositoryImpl: AuthRepository {
         }
     }
     
+    func updatePassword(email: String, oldPassword: String, newPassword: String) async -> String {
+        guard let user = Auth.auth().currentUser else {
+            return "no-current-user-error"
+        }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: oldPassword)
+        do {
+            let authResult = try await user.reauthenticate(with: credential)
+            try await authResult.user.updatePassword(to: newPassword)
+        } catch {
+            print(error.localizedDescription)
+            return error.localizedDescription
+        }
+        return ""
+    }
+    
     func signOut() {
         do {
             try auth.signOut()

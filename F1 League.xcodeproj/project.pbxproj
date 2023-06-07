@@ -73,6 +73,7 @@
 		A9E0C71A29D1EB4500F76F74 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71929D1EB4500F76F74 /* Race.swift */; };
 		A9E0C71C29D1F62700F76F74 /* RacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71B29D1F62700F76F74 /* RacesService.swift */; };
 		A9E0C71E29D1F64700F76F74 /* FirestoreDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */; };
+		A9E149752A30B33C001C0926 /* UpdatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E149742A30B33C001C0926 /* UpdatePasswordView.swift */; };
 		A9E6AE9229D22BBC001F52B7 /* RacesListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */; };
 		A9EE36C129EAC8530049D29A /* GroupRaceContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */; };
 		A9EE36C429EACC320049D29A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE36C329EACC320049D29A /* DateUtils.swift */; };
@@ -157,6 +158,7 @@
 		A9E0C71929D1EB4500F76F74 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		A9E0C71B29D1F62700F76F74 /* RacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesService.swift; sourceTree = "<group>"; };
 		A9E0C71D29D1F64700F76F74 /* FirestoreDocuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDocuments.swift; sourceTree = "<group>"; };
+		A9E149742A30B33C001C0926 /* UpdatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordView.swift; sourceTree = "<group>"; };
 		A9E6AE9129D22BBC001F52B7 /* RacesListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesListItemView.swift; sourceTree = "<group>"; };
 		A9EE36C029EAC8530049D29A /* GroupRaceContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRaceContentView.swift; sourceTree = "<group>"; };
 		A9EE36C329EACC320049D29A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				A93202F32A2FC2EE008A95F6 /* EditUserView.swift */,
 				A93202F62A2FC30F008A95F6 /* EditUserPasswordView.swift */,
 				A93202F82A2FC547008A95F6 /* EditUserViewModel.swift */,
+				A9E149742A30B33C001C0926 /* UpdatePasswordView.swift */,
 			);
 			path = "edit-user-information";
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				A9360C4529FAF8A3007194BD /* RaceBetRepository.swift in Sources */,
 				A984340029D6E48C00252EF0 /* AddGroupMemberView.swift in Sources */,
 				A98433ED29D5D0E200252EF0 /* AppUser.swift in Sources */,
+				A9E149752A30B33C001C0926 /* UpdatePasswordView.swift in Sources */,
 				A90049E729DC5B0600740F1D /* GroupRaceListItem.swift in Sources */,
 				A9EE36C729EAD6600049D29A /* RaceBet.swift in Sources */,
 				A95D966E29E1D5B100DAADEE /* UserProfileView.swift in Sources */,

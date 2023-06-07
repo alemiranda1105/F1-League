@@ -30,6 +30,12 @@ import Foundation
         self.pending = false
     }
     
+    func updatePassword(email: String, oldPassword: String, newPassword: String) async {
+        self.pending = true
+        self.error = await self.authService.updateUserPassword(email: email, oldPassword: oldPassword, newPassword: newPassword)
+        self.pending = false
+    }
+    
     private func updateAuthUser(newUser: AppUser, password: String) async -> AppUser? {
         let (user, error) = await self.authService.updateAuthUser(newUser: newUser, password: password)
         if !error.isEmpty {

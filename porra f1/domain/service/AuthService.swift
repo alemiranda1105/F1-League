@@ -32,6 +32,10 @@ class AuthService {
         return await authRepository.updateAuthUser(newUser: newUser, password: password)
     }
     
+    func updateUserPassword(email: String, oldPassword: String, newPassword: String) async -> String {
+        return await authRepository.updatePassword(email: email, oldPassword: oldPassword, newPassword: newPassword)
+    }
+     
     func signOut() {
         authRepository.signOut()
     }

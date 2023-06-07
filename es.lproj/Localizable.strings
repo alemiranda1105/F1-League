@@ -66,6 +66,17 @@
 /* UserProfile */
 "sign-out" = "Cerrar sesión";
 "profile-view" = "Perfil";
+"edit-user-information" = "Editar información";
+"update-password" = "Actualizar contraseña";
+
+/* EditUserView */
+"new-username" = "Nuevo nombre de usuario";
+"new-email" = "Nuevo email";
+"submit" = "Guardar";
+
+/* UpdatePasswordView */
+"new-password" = "Nueva contraseña";
+"old-password" = "Contraseña actual";
 
 /* GroupRaceContentView */
 "view-less-text" = "Ver menos";

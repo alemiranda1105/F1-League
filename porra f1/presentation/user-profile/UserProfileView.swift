@@ -28,7 +28,7 @@ struct UserProfileView: View {
                         // Button("edit-user-information") {
                         //     showEditView = true
                         // }
-                        Button("update-password-button") {
+                        Button("update-password") {
                             showUpdatePasswordButton = true
                         }
                     }
@@ -55,7 +55,11 @@ struct UserProfileView: View {
             }
         }
         .sheet(isPresented: $showUpdatePasswordButton) {
-            Text("password")
+            if let currentUser = Binding($userProfileViewModel.user) {
+                UpdatePasswordView(currentUser: currentUser)
+            } else {
+                Text("no-user-found")
+            }
         }
         .sheet(isPresented: $showEditView) {
             if let currentUser = Binding($userProfileViewModel.user) {
