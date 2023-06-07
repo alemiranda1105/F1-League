@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DriversListItemView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var driver: Driver
     
     var body: some View {
@@ -39,9 +40,15 @@ struct DriversListItemView: View {
             
         }
         .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color("AccentColor") , lineWidth: 1)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("CardColor"))
+                .shadow(
+                    color: colorScheme == .dark ? Color.white.opacity(0.15) : Color.black.opacity(0.15),
+                    radius: 10,
+                    x: 0,
+                    y: 0
+                )
         )
         .padding()
     }

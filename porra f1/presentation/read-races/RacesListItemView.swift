@@ -15,7 +15,7 @@ struct RacesListItemView: View {
     private let CORNER_RADIUS: CGFloat = 10
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             Image("GP-\(race.round)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -43,8 +43,17 @@ struct RacesListItemView: View {
             
         }
         .frame(maxWidth: .infinity)
-        .background(colorScheme == .dark ? Color.gray.opacity(0.2) : Color.gray.opacity(0.1))
         .cornerRadius(CORNER_RADIUS)
+        .background(
+            RoundedRectangle(cornerRadius: CORNER_RADIUS)
+                .fill(Color("CardColor"))
+                .shadow(
+                    color: colorScheme == .dark ? Color.white.opacity(0.15) : Color.black.opacity(0.15),
+                    radius: 10,
+                    x: 0,
+                    y: 0
+                )
+        )
         .padding()
         
     }
