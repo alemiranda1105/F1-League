@@ -43,18 +43,22 @@ struct GroupDetailsView: View {
             } else {
                 if (page == 0) {
                     GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
+                        .transition(.move(edge: .leading).combined(with: .opacity))
                 } else {
                     GroupStandingsView(groupId: .constant(group.id!))
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
+                        
                 }
             }
         }
         .navigationTitle(group.name)
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Picker("", selection: $page.animation(.spring(response: 0.285, dampingFraction: 0.825))) {
+            ToolbarItem(placement: .status) {
+                Picker("", selection: $page.animation(.easeInOut(duration: 0.35))) {
                     Text("Races").tag(0)
                     Text("Standings").tag(1)
                 }
+                .pickerStyle(SegmentedPickerStyle())
             }
         }
         .onAppear {
