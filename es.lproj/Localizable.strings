@@ -100,6 +100,8 @@
 "create-bet-button" = "Crear apuesta";
 "create-bet-title" = "Crear apuesta";
 "race-result-texts" = "Resultado";
+"You cannot create a bet after the Race" = "No se pueden crear apuestas despues del comienzo de la carrera";
+"bet-not-valid" = "Apuesta no válida";
 
 /* Generic */
 "dismiss" = "Cerrar";

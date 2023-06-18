@@ -41,7 +41,7 @@ struct GroupRaceView: View {
                             
                             if groupRaceViewModel.userBet != nil {
                                 CurrentBetView(currentBet: groupRaceViewModel.userBet!)
-                            } else if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
+                            } else if Date() <= groupRaceViewModel.race!.getRaceDatetime() {
                                 NavigationLink(destination: CreateRaceBetView(raceRound: .constant(raceRound))) {
                                     Text("create-bet")
                                         .frame(maxWidth: .infinity)
@@ -52,7 +52,7 @@ struct GroupRaceView: View {
                                 .cornerRadius(10)
                                 .padding()
                             } else {
-                                Text("You cannot create a bet after the Qualy")
+                                Text("You cannot create a bet after the Race")
                                     .bold()
                             }
                         }
