@@ -66,6 +66,12 @@
 /* UserProfile */
 "sign-out" = "Sign out";
 "profile-view" = "Profile";
+"edit-user-information" = "Update information";
+"update-password-button" = "Update password";
+
+/* UpdatePasswordView */
+"new-password" = "New password";
+"old-password" = "Old password";
 
 /* GroupRaceContentView */
 "view-less-text" = "View less";
@@ -89,6 +95,8 @@
 "create-bet-button" = "Create bet";
 "create-bet-title" = "Create bet";
 "race-result-texts" = "Race result";
+"You cannot create a bet after the Race" = "You cannot create a bet after the Race";
+"bet-not-valid" = "Bet is not valid";
 
 /* Generic */
 "dismiss" = "Close";

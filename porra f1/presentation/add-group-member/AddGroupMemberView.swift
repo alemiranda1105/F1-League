@@ -51,6 +51,7 @@ struct AddGroupMemberView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                     .disabled(self.selectedUsers.isEmpty)
+                    .padding()
                 }
             }
             .searchable(text: $userEmail)

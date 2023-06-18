@@ -23,7 +23,12 @@ import FirebaseAuth
             }
             
             Task {
-                let (userData, error) = await self.appUserService.getUserByEmail(email: (authUser?.email ?? ""))
+                guard let userEmail = authUser?.email else {
+                    print("wrong email")
+                    self.authService.signOut()
+                    return
+                }
+                let (userData, error) = await self.appUserService.getUserByEmail(email: userEmail)
                 if !error.isEmpty || userData == nil {
                     self.authService.signOut()
                     return

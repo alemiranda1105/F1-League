@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class UserRepositoryImpl: UserRepository {
     private let appUserDb = Firestore.firestore()
@@ -92,5 +93,19 @@ class UserRepositoryImpl: UserRepository {
         return (user, errorMessage)
     }
     
+    func updateUser(user: AppUser) async -> (updatedUser: AppUser?, error: String) {
+        var updatedUser: AppUser? = nil
+        var errorMesssage = ""
+
+        let ref = appUserDb.collection(FirestoreDocuments.USERS.rawValue).document(user.id ?? "")
+        do {
+            try ref.setData(from: user, merge: false)
+            updatedUser = try await ref.getDocument(as: AppUser.self)
+        } catch {
+            print(error.localizedDescription)
+            errorMesssage = error.localizedDescription
+        }
+        return (updatedUser, errorMesssage)
+    }
     
 }

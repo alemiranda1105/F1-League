@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GroupRaceContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     let race: Race
     
     @State var showMore = false
@@ -74,8 +75,17 @@ struct GroupRaceContentView: View {
             }
             .padding()
         }
-        .background(Color.gray.opacity(0.2))
         .cornerRadius(10)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color("CardColor"))
+                .shadow(
+                    color: colorScheme == .dark ? Color.white.opacity(0.15) : Color.black.opacity(0.15),
+                    radius: 10,
+                    x: 0,
+                    y: 0
+                )
+        )
         .padding()
         
     }

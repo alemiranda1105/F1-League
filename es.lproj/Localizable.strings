@@ -38,7 +38,7 @@
 "create-group" = "Crear grupo";
 
 /* CreateGroupView */
-"group-name-label" = "Nombre del group";
+"group-name-label" = "Nombre del grupo";
 "create-group-button" = "Crear grupo";
 "cancel-button" = "Cancelar";
 "group-name-field" = "Nombre";
@@ -66,6 +66,17 @@
 /* UserProfile */
 "sign-out" = "Cerrar sesión";
 "profile-view" = "Perfil";
+"edit-user-information" = "Editar información";
+"update-password" = "Actualizar contraseña";
+
+/* EditUserView */
+"new-username" = "Nuevo nombre de usuario";
+"new-email" = "Nuevo email";
+"submit" = "Guardar";
+
+/* UpdatePasswordView */
+"new-password" = "Nueva contraseña";
+"old-password" = "Contraseña actual";
 
 /* GroupRaceContentView */
 "view-less-text" = "Ver menos";
@@ -89,6 +100,8 @@
 "create-bet-button" = "Crear apuesta";
 "create-bet-title" = "Crear apuesta";
 "race-result-texts" = "Resultado";
+"You cannot create a bet after the Race" = "No se pueden crear apuestas despues del comienzo de la carrera";
+"bet-not-valid" = "Apuesta no válida";
 
 /* Generic */
 "dismiss" = "Cerrar";

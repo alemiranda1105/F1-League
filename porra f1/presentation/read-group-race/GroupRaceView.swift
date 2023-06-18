@@ -41,12 +41,18 @@ struct GroupRaceView: View {
                             
                             if groupRaceViewModel.userBet != nil {
                                 CurrentBetView(currentBet: groupRaceViewModel.userBet!)
-                            } else if Date() <= groupRaceViewModel.race!.qualifying.getRaceSessionDatetime() {
+                            } else if Date() <= groupRaceViewModel.race!.getRaceDatetime() {
                                 NavigationLink(destination: CreateRaceBetView(raceRound: .constant(raceRound))) {
                                     Text("create-bet")
+                                        .frame(maxWidth: .infinity)
+                                        .bold()
+                                        .padding()
                                 }
+                                .buttonStyle(.bordered)
+                                .cornerRadius(10)
+                                .padding()
                             } else {
-                                Text("You cannot create a bet after the Qualy")
+                                Text("You cannot create a bet after the Race")
                                     .bold()
                             }
                         }
@@ -63,8 +69,10 @@ struct GroupRaceView: View {
             .navigationTitle(groupRaceViewModel.race?.getRaceName() ?? "")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button("dismiss") {
-                    dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("dismiss") {
+                        dismiss()
+                    }
                 }
             }
         }
@@ -76,7 +84,7 @@ struct GroupRaceView: View {
 
 struct GroupRaceView_Previews: PreviewProvider {
     static var previews: some View {
-        GroupRaceView(raceRound: 1)
+        GroupRaceView(raceRound: 12)
             .environmentObject(GroupStorage(groupId: "", userId: "", userEmail: ""))
     }
 }

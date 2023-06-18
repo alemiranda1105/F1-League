@@ -14,19 +14,14 @@ import Foundation
     @Published var user: AppUser?
     @Published var pending: Bool = true
     
-    init() {
-        loadUser()
-    }
-    
     func signOut() {
         self.authService.signOut()
     }
     
-    private func loadUser() {
+    func loadUser() async {
         self.pending = false
-        Task {
-            self.user = await appUserService.getCurrentUser()!
-            self.pending = false
-        }
+        self.user = await appUserService.getCurrentUser()!
+        self.pending = false
+        
     }
 }

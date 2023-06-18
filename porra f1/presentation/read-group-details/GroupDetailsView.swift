@@ -45,14 +45,18 @@ struct GroupDetailsView: View {
                     GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
                 } else {
                     GroupStandingsView(groupId: .constant(group.id!))
+                        
                 }
             }
         }
         .navigationTitle(group.name)
         .toolbar {
-            Picker("", selection: $page.animation(.spring(response: 0.285, dampingFraction: 0.825))) {
-                Text("Races").tag(0)
-                Text("Standings").tag(1)
+            ToolbarItem(placement: .status) {
+                Picker("", selection: $page) {
+                    Text("Races").tag(0)
+                    Text("Standings").tag(1)
+                }
+                .pickerStyle(SegmentedPickerStyle())
             }
         }
         .onAppear {

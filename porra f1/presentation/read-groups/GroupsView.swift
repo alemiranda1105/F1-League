@@ -53,10 +53,12 @@ struct GroupsView: View {
             }
             .navigationTitle("groups-view")
             .toolbar {
-                Button {
-                    self.showCreateGroupSheet = true
-                } label: {
-                    Image(systemName: "plus")
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        self.showCreateGroupSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
             }
             .task {
