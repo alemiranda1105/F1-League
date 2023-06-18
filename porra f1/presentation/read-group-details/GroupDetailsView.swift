@@ -43,10 +43,8 @@ struct GroupDetailsView: View {
             } else {
                 if (page == 0) {
                     GroupRacesView(currentRace: currentRace, nextRaces: $groupDetailsVm.nextRaces, prevRaces: $groupDetailsVm.prevRaces)
-                        .transition(.move(edge: .leading).combined(with: .opacity))
                 } else {
                     GroupStandingsView(groupId: .constant(group.id!))
-                        .transition(.move(edge: .trailing).combined(with: .opacity))
                         
                 }
             }
@@ -54,7 +52,7 @@ struct GroupDetailsView: View {
         .navigationTitle(group.name)
         .toolbar {
             ToolbarItem(placement: .status) {
-                Picker("", selection: $page.animation(.easeInOut(duration: 0.35))) {
+                Picker("", selection: $page) {
                     Text("Races").tag(0)
                     Text("Standings").tag(1)
                 }
